@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown, Play, ArrowRight } from 'lucide-react';
+import { ChevronDown, Play, Terminal, Code, Zap } from 'lucide-react';
 
 const Hero = () => {
   const scrollToNext = () => {
@@ -9,117 +9,140 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-purple-50">
-      {/* Background Elements - Optimized */}
-      <div className="absolute inset-0 overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#121212]">
+      {/* Terminal Header Bar */}
+      <div className="terminal-header" />
+      
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Terminal Window */}
         <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear",
-            repeatDelay: 0
-          }}
-          style={{ transformStyle: 'preserve-3d' }}
-          className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.1, 1, 1.1],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: "linear",
-            repeatDelay: 0
-          }}
-          style={{ transformStyle: 'preserve-3d' }}
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
-        />
-      </div>
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="terminal-window p-8 mb-8"
+        >
+          <div className="flex items-center justify-between mb-6 text-sm text-gray-400">
+            <div className="flex items-center space-x-2">
+              <Terminal size={16} />
+              <span>PAR_SOFTWARE</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-left"
+          >
+            <div className="mb-4">
+              <span className="text-yellow-400">$</span>
+              <span className="text-gray-400 ml-2">cd /par-software</span>
+            </div>
+            <div className="mb-4">
+              <span className="text-yellow-400">$</span>
+              <span className="text-gray-400 ml-2">./init.sh</span>
+            </div>
+            <div className="mb-6">
+              <span className="text-green-400">✓</span>
+              <span className="text-gray-400 ml-2">System initialized successfully</span>
+            </div>
+          </motion.div>
+        </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Main Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="mb-12"
         >
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="text-4xl md:text-6xl font-bold text-gray-100 mb-6 leading-tight"
           >
-            We Build the
-            <span className="text-gradient block">Future of Business</span>
+            <span className="text-yellow-400">class</span>{' '}
+            <span className="text-blue-400">PARSoftware</span> {'{'}
+            <br />
+            <span className="text-gray-400 ml-8">{'// We build the future of business'}</span>
+            <br />
+            {'}'}
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
-            PAR SOFTWARE specializes in AI Automation for companies. We build cutting-edge apps, 
-            websites, and intelligent solutions that transform how businesses operate.
+            <span className="text-yellow-400">PAR SOFTWARE</span> specializes in{' '}
+            <span className="text-green-400">AI Automation</span> for companies. 
+            We build cutting-edge <span className="text-blue-400">apps</span>,{' '}
+            <span className="text-blue-400">websites</span>, and intelligent solutions 
+            that transform how businesses operate.
           </motion.p>
         </motion.div>
 
+        {/* Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-lg font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-blue-700"
+            className="btn-primary flex items-center gap-2"
           >
+            <Code size={18} />
             Start Your Project
-            <ArrowRight size={20} />
           </motion.button>
           
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3 text-lg font-semibold text-gray-700 shadow-lg transition-colors duration-200 hover:bg-gray-50"
+            className="btn-secondary flex items-center gap-2"
           >
-            <Play size={20} className="text-blue-600" />
+            <Play size={18} />
             Watch Demo
           </motion.button>
         </motion.div>
 
-        {/* Stats */}
+        {/* Stats in Terminal Cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
         >
           {[
-            { number: '500+', label: 'Projects Completed' },
-            { number: '98%', label: 'Client Satisfaction' },
-            { number: '24/7', label: 'Support Available' }
+            { number: '500+', label: 'Projects Completed', icon: Code },
+            { number: '98%', label: 'Client Satisfaction', icon: Zap },
+            { number: '24/7', label: 'Support Available', icon: Terminal }
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1 + index * 0.1, ease: "easeOut" }}
-              className="text-center"
+              transition={{ duration: 0.5, delay: 1.2 + index * 0.1, ease: "easeOut" }}
+              className="terminal-card text-center group"
             >
-              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+              <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:border-yellow-400/40 transition-colors duration-300">
+                <stat.icon size={24} className="text-yellow-400" />
+              </div>
+              <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">
+              <div className="text-gray-400 text-sm">
                 {stat.label}
               </div>
             </motion.div>
@@ -138,7 +161,7 @@ const Hero = () => {
           onClick={scrollToNext}
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+          className="text-gray-500 hover:text-yellow-400 transition-colors duration-200"
         >
           <ChevronDown size={24} />
         </motion.button>

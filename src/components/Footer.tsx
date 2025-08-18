@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowUp } from 'lucide-react';
+import { Terminal, Code, ArrowUp, Github, Twitter, Linkedin, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   const ref = useRef(null);
@@ -16,173 +16,212 @@ const Footer = () => {
   const footerLinks = {
     company: [
       { name: 'About Us', href: '#about' },
-      { name: 'Our Team', href: '#' },
+      { name: 'Services', href: '#services' },
       { name: 'Careers', href: '#' },
-      { name: 'Press', href: '#' }
+      { name: 'Blog', href: '#' }
     ],
     services: [
-      { name: 'AI Automation', href: '#services' },
-      { name: 'Web Development', href: '#services' },
-      { name: 'Mobile Apps', href: '#services' },
-      { name: 'Custom Software', href: '#services' }
+      { name: 'AI Automation', href: '#' },
+      { name: 'Web Development', href: '#' },
+      { name: 'Mobile Apps', href: '#' },
+      { name: 'Custom Software', href: '#' }
     ],
-    resources: [
-      { name: 'Blog', href: '#' },
-      { name: 'Case Studies', href: '#' },
+    support: [
       { name: 'Documentation', href: '#' },
-      { name: 'Support', href: '#' }
-    ],
-    legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
-      { name: 'GDPR', href: '#' }
+      { name: 'Help Center', href: '#' },
+      { name: 'Contact Support', href: '#contact' },
+      { name: 'Status Page', href: '#' }
     ]
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Github, href: '#', label: 'GitHub' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Github, href: '#', label: 'GitHub' }
+    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:hello@parsoftware.com', label: 'Email' }
   ];
 
   return (
-    <footer ref={ref} className="bg-gray-900 text-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 60,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.1, 1, 1.1],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 65,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-tr from-purple-900/20 to-pink-900/20 rounded-full blur-3xl"
-        />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+    <footer ref={ref} className="bg-[#0a0a0a] border-t border-gray-800 relative overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
-          {/* Company Info */}
+        <div className="py-16">
+          {/* Top Section */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-2"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12"
           >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-2xl">P</span>
+            {/* Company Info */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
+                  <Terminal size={20} className="text-gray-900" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm text-gray-400 font-mono">monkey see</span>
+                  <span className="text-xl font-bold text-gray-100 font-mono">PAR SOFTWARE</span>
+                </div>
               </div>
-              <span className="text-3xl font-bold">PAR SOFTWARE</span>
+              
+              <p className="text-gray-400 font-mono mb-6 max-w-md">
+                Building the future of business through intelligent automation, 
+                innovative software solutions, and exceptional user experiences.
+              </p>
+              
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                {socialLinks.map((social) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="w-10 h-10 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 transition-all duration-200"
+                  >
+                    <social.icon size={18} />
+                  </motion.a>
+                ))}
+              </div>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
-              We specialize in AI Automation for companies and build cutting-edge apps, 
-              websites, and intelligent solutions that transform how businesses operate.
-            </p>
-            
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Mail size={18} />
-                <span>hello@parsoftware.com</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Phone size={18} />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <MapPin size={18} />
-                <span>San Francisco, CA</span>
-              </div>
-            </div>
-          </motion.div>
 
-          {/* Footer Links */}
-          {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
-            <motion.div
-              key={category}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 + categoryIndex * 0.1 }}
-            >
-              <h3 className="text-lg font-semibold mb-6 capitalize">
-                {category}
+            {/* Company Links */}
+            <div>
+              <h3 className="text-gray-100 font-bold mb-6 font-mono">
+                <span className="text-yellow-400">const</span> company
               </h3>
               <ul className="space-y-3">
-                {links.map((link) => (
+                {footerLinks.company.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200"
+                      className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono text-sm"
                     >
                       {link.name}
                     </a>
                   </li>
                 ))}
               </ul>
-            </motion.div>
-          ))}
+            </div>
+
+            {/* Services Links */}
+            <div>
+              <h3 className="text-gray-100 font-bold mb-6 font-mono">
+                <span className="text-yellow-400">const</span> services
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.services.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono text-sm"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Support Links */}
+            <div>
+              <h3 className="text-gray-100 font-bold mb-6 font-mono">
+                <span className="text-yellow-400">const</span> support
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.support.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono text-sm"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* Newsletter Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="terminal-window p-8 mb-12"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              <span className="text-gray-400 text-sm font-mono ml-4">newsletter.js</span>
+            </div>
+            
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-100 mb-4 font-mono">
+                <span className="text-yellow-400">function</span>{' '}
+                <span className="text-blue-400">subscribe</span>()
+              </h3>
+              <p className="text-gray-400 font-mono mb-6">
+                Stay updated with our latest innovations and tech insights
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 bg-gray-900 border border-gray-700 rounded-md px-4 py-3 text-gray-100 font-mono focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                />
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="btn-primary flex items-center gap-2 whitespace-nowrap"
+                >
+                  <Code size={16} />
+                  Subscribe
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* Bottom Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="border-t border-gray-800 pt-8"
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          className="border-t border-gray-800 py-8"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
-              © 2024 PAR SOFTWARE. All rights reserved.
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-2 text-gray-400 font-mono text-sm mb-4 md:mb-0">
+              <span>Made with</span>
+              <Heart size={14} className="text-red-400" />
+              <span>by PAR SOFTWARE</span>
             </div>
             
-            <div className="flex items-center space-x-6">
-              {/* Social Links */}
-              <div className="flex items-center space-x-4">
-                {socialLinks.map((social) => (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-200"
-                    aria-label={social.label}
-                  >
-                    <social.icon size={18} />
-                  </motion.a>
-                ))}
-              </div>
-              
-              {/* Scroll to Top Button */}
-              <motion.button
-                onClick={scrollToTop}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-200"
-                aria-label="Scroll to top"
-              >
-                <ArrowUp size={18} />
-              </motion.button>
+            <div className="flex items-center space-x-6 text-sm">
+              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono">
+                Terms of Service
+              </a>
+              <span className="text-gray-600 font-mono">© 2024 PAR SOFTWARE</span>
             </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <motion.button
+        onClick={scrollToTop}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-8 right-8 w-12 h-12 bg-yellow-400 text-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center"
+      >
+        <ArrowUp size={20} />
+      </motion.button>
     </footer>
   );
 };
