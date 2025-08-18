@@ -53,51 +53,54 @@ const Services = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.08,
+        delayChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   };
 
   return (
     <section id="services" ref={ref} className="section-padding bg-white relative overflow-hidden">
-      {/* Background Elements */}
+      {/* Background Elements - Optimized */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{
-            scale: [1, 1.1, 1],
+            scale: [1, 1.05, 1],
             rotate: [0, 90, 180],
           }}
           transition={{
-            duration: 30,
+            duration: 50,
             repeat: Infinity,
             ease: "linear"
           }}
+          style={{ transformStyle: 'preserve-3d' }}
           className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl opacity-50"
         />
         <motion.div
           animate={{
-            scale: [1.1, 1, 1.1],
+            scale: [1.05, 1, 1.05],
             rotate: [180, 90, 0],
           }}
           transition={{
-            duration: 35,
+            duration: 60,
             repeat: Infinity,
             ease: "linear"
           }}
+          style={{ transformStyle: 'preserve-3d' }}
           className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-tr from-purple-100 to-pink-100 rounded-full blur-3xl opacity-50"
         />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -118,14 +121,15 @@ const Services = () => {
             <motion.div
               key={service.title}
               variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
+              whileHover={{ y: -5, scale: 1.01 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
             >
               {/* Hover Effect Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
                   <service.icon size={32} className="text-white" />
                 </div>
                 
@@ -151,14 +155,15 @@ const Services = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           className="text-center mt-16"
         >
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-lg font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-blue-700"
           >
             View All Services

@@ -32,11 +32,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Animation Performance Optimizations */
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  will-change: backdrop-filter;
 }
 
 .text-gradient {
@@ -52,6 +54,25 @@ body {
 
 .section-padding {
   padding: 120px 0;
+}
+
+/* Optimize animations */
+.motion-div {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media (max-width: 768px) {

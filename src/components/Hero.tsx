@@ -10,30 +10,34 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-purple-50">
-      {/* Background Elements */}
+      {/* Background Elements - Optimized */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
+            scale: [1, 1.1, 1],
             rotate: [0, 180, 360],
           }}
           transition={{
-            duration: 20,
+            duration: 30,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
+            repeatDelay: 0
           }}
+          style={{ transformStyle: 'preserve-3d' }}
           className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
-            scale: [1.2, 1, 1.2],
+            scale: [1.1, 1, 1.1],
             rotate: [360, 180, 0],
           }}
           transition={{
-            duration: 25,
+            duration: 40,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
+            repeatDelay: 0
           }}
+          style={{ transformStyle: 'preserve-3d' }}
           className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
         />
       </div>
@@ -42,13 +46,13 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
           >
             We Build the
@@ -58,7 +62,7 @@ const Hero = () => {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
             PAR SOFTWARE specializes in AI Automation for companies. We build cutting-edge apps, 
@@ -69,12 +73,13 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-lg font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-blue-700"
           >
             Start Your Project
@@ -82,8 +87,9 @@ const Hero = () => {
           </motion.button>
           
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3 text-lg font-semibold text-gray-700 shadow-lg transition-colors duration-200 hover:bg-gray-50"
           >
             <Play size={20} className="text-blue-600" />
@@ -95,7 +101,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           {[
@@ -105,9 +111,9 @@ const Hero = () => {
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
+              transition={{ duration: 0.5, delay: 1 + index * 0.1, ease: "easeOut" }}
               className="text-center"
             >
               <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
@@ -130,8 +136,8 @@ const Hero = () => {
       >
         <motion.button
           onClick={scrollToNext}
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
         >
           <ChevronDown size={24} />
