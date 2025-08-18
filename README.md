@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PAR SOFTWARE - AI Automation & Development
 
-## Getting Started
+A modern, Apple-inspired website for PAR SOFTWARE, specializing in AI Automation for companies and building cutting-edge apps and websites.
 
-First, run the development server:
+## 🚀 Features
 
+- **Modern Design**: Apple-inspired aesthetic with clean, minimalist design
+- **Smooth Animations**: Framer Motion-powered scroll animations and interactions
+- **Responsive Layout**: Fully responsive design that works on all devices
+- **Performance Optimized**: Built with Next.js 15 and optimized for speed
+- **TypeScript**: Full TypeScript support for better development experience
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Language**: TypeScript
+- **Font**: Inter (Google Fonts)
+
+## 📱 Sections
+
+1. **Navigation**: Glass-effect navigation with smooth transitions
+2. **Hero**: Eye-catching hero section with gradient text and animated backgrounds
+3. **Services**: Showcase of AI Automation, Web Development, Mobile Apps, and more
+4. **About**: Company information with animated stats and values
+5. **Contact**: Contact form and company information
+6. **Footer**: Comprehensive footer with links and social media
+
+## 🎨 Design Features
+
+- **Glass Morphism**: Modern glass-effect design elements
+- **Gradient Text**: Beautiful gradient text effects
+- **Animated Backgrounds**: Subtle animated background elements
+- **Smooth Scrolling**: Smooth scroll animations between sections
+- **Hover Effects**: Interactive hover animations on cards and buttons
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd par-software
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+### Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── Navigation.tsx
+│   ├── Hero.tsx
+│   ├── Services.tsx
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   └── Footer.tsx
+```
 
-## Deploy on Vercel
+## 🎯 Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Colors
+The color scheme can be customized in `tailwind.config.ts` and `globals.css`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Primary: Blue (#2563eb)
+- Secondary: Purple (#7c3aed)
+- Accent: Various gradients
+
+### Animations
+Animation timings and effects can be adjusted in each component's motion variants.
+
+### Content
+Update the content in each component to match your company's information.
+
+## 📱 Responsive Design
+
+The website is fully responsive with breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## 🚀 Deployment
+
+The application can be deployed to:
+- Vercel (recommended for Next.js)
+- Netlify
+- Any static hosting service
+
+## 📄 License
+
+This project is proprietary to PAR SOFTWARE.
+
+## 🤝 Support
+
+For support or questions, contact:
+- Email: hello@parsoftware.com
+- Phone: +1 (555) 123-4567
+
+---
+
+Built with ❤️ by PAR SOFTWARE
