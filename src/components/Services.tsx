@@ -15,42 +15,42 @@ const Services = () => {
       title: 'AI Automation',
       description: 'Streamline your business processes with intelligent automation solutions that learn and adapt.',
       features: ['Process Automation', 'Machine Learning', 'Predictive Analytics'],
-      code: 'const ai = new Automation();'
+      highlight: 'Smart & Efficient'
     },
     {
       icon: Globe,
       title: 'Web Development',
       description: 'Modern, responsive websites that convert visitors into customers with stunning design.',
       features: ['Responsive Design', 'SEO Optimized', 'Performance Focused'],
-      code: 'npm install @par-software/web'
+      highlight: 'Modern & Fast'
     },
     {
       icon: Smartphone,
       title: 'Mobile Apps',
       description: 'Native and cross-platform mobile applications that engage users and drive growth.',
       features: ['iOS & Android', 'Cross-Platform', 'User-Centric Design'],
-      code: 'flutter create par_app'
+      highlight: 'Mobile First'
     },
     {
       icon: Zap,
       title: 'Custom Software',
       description: 'Tailored software solutions designed specifically for your business needs.',
       features: ['Bespoke Solutions', 'Scalable Architecture', 'Integration Ready'],
-      code: 'git clone par-software/core'
+      highlight: 'Built for You'
     },
     {
       icon: Database,
       title: 'Data Solutions',
       description: 'Transform your data into actionable insights with advanced analytics and visualization.',
       features: ['Data Analytics', 'Business Intelligence', 'Real-time Dashboards'],
-      code: 'SELECT * FROM insights;'
+      highlight: 'Data Driven'
     },
     {
       icon: Shield,
       title: 'Security & Compliance',
       description: 'Enterprise-grade security measures to protect your business and ensure compliance.',
       features: ['Data Protection', 'GDPR Compliance', 'Security Audits'],
-      code: 'encrypt(data, AES256);'
+      highlight: 'Secure & Compliant'
     }
   ];
 
@@ -85,12 +85,8 @@ const Services = () => {
             <span>services/</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-6 font-mono">
-            <span className="text-yellow-400">function</span>{' '}
-            <span className="text-blue-400">getServices</span>() {'{'}
-            <br />
-            <span className="text-gray-400 ml-8">{'// Our core offerings'}</span>
-            <br />
-            {'}'}
+            <span className="text-yellow-400">Our</span>{' '}
+            <span className="text-blue-400">Services</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto font-mono">
             We deliver comprehensive solutions that drive innovation and growth for your business
@@ -127,9 +123,9 @@ const Services = () => {
                 {service.description}
               </p>
               
-              {/* Code Snippet */}
-              <div className="bg-gray-900 border border-gray-700 rounded-md p-3 mb-6 font-mono text-sm">
-                <span className="text-green-400">{service.code}</span>
+              {/* Highlight Badge */}
+              <div className="bg-yellow-400/10 border border-yellow-400/20 rounded-md p-3 mb-6 text-center">
+                <span className="text-yellow-400 font-mono text-sm font-semibold">{service.highlight}</span>
               </div>
               
               {/* Features List */}

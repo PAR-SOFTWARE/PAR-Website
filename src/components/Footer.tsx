@@ -88,7 +88,7 @@ const Footer = () => {
             {/* Company Links */}
             <div>
               <h3 className="text-gray-100 font-bold mb-6 font-mono">
-                <span className="text-yellow-400">const</span> company
+                Company
               </h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
@@ -107,7 +107,7 @@ const Footer = () => {
             {/* Services Links */}
             <div>
               <h3 className="text-gray-100 font-bold mb-6 font-mono">
-                <span className="text-yellow-400">const</span> services
+                Services
               </h3>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
@@ -126,7 +126,7 @@ const Footer = () => {
             {/* Support Links */}
             <div>
               <h3 className="text-gray-100 font-bold mb-6 font-mono">
-                <span className="text-yellow-400">const</span> support
+                Support
               </h3>
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
@@ -159,11 +159,10 @@ const Footer = () => {
             
             <div className="text-center">
               <h3 className="text-2xl font-bold text-gray-100 mb-4 font-mono">
-                <span className="text-yellow-400">function</span>{' '}
-                <span className="text-blue-400">subscribe</span>()
+                Stay Updated
               </h3>
               <p className="text-gray-400 font-mono mb-6">
-                Stay updated with our latest innovations and tech insights
+                Get our latest insights and tech updates delivered to your inbox
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

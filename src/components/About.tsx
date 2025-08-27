@@ -54,12 +54,8 @@ const About = () => {
             <span>about/</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-6 font-mono">
-            <span className="text-yellow-400">class</span>{' '}
-            <span className="text-blue-400">AboutPAR</span> {'{'}
-            <br />
-            <span className="text-gray-400 ml-8">{'// Our story & mission'}</span>
-            <br />
-            {'}'}
+            <span className="text-yellow-400">About</span>{' '}
+            <span className="text-blue-400">PAR SOFTWARE</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto font-mono">
             Discover the team behind the technology and our mission to transform businesses through innovation
@@ -111,8 +107,8 @@ const About = () => {
           className="mb-20"
         >
           <h3 className="text-2xl font-bold text-gray-100 mb-12 text-center font-mono">
-            <span className="text-yellow-400">const</span>{' '}
-            <span className="text-blue-400">coreValues</span> = [
+            <span className="text-yellow-400">Our</span>{' '}
+            <span className="text-blue-400">Core Values</span>
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -138,10 +134,6 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-          
-          <div className="text-center mt-8">
-            <span className="text-gray-400 font-mono text-2xl">];</span>
-          </div>
         </motion.div>
 
         {/* Stats Section */}
@@ -152,8 +144,8 @@ const About = () => {
           className="text-center"
         >
           <h3 className="text-2xl font-bold text-gray-100 mb-12 font-mono">
-            <span className="text-yellow-400">console</span>.
-            <span className="text-blue-400">log</span>(stats);
+            <span className="text-yellow-400">Our</span>{' '}
+            <span className="text-blue-400">Numbers</span>
           </h3>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

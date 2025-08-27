@@ -13,7 +13,7 @@ const Hero = () => {
       {/* Terminal Header Bar */}
       <div className="terminal-header" />
       
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-20">
         {/* Terminal Window */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,15 +41,15 @@ const Hero = () => {
           >
             <div className="mb-4">
               <span className="text-yellow-400">$</span>
-              <span className="text-gray-400 ml-2">cd /par-software</span>
+              <span className="text-gray-400 ml-2">Welcome to PAR Software</span>
             </div>
             <div className="mb-4">
               <span className="text-yellow-400">$</span>
-              <span className="text-gray-400 ml-2">./init.sh</span>
+              <span className="text-gray-400 ml-2">Loading amazing solutions...</span>
             </div>
             <div className="mb-6">
               <span className="text-green-400">✓</span>
-              <span className="text-gray-400 ml-2">System initialized successfully</span>
+              <span className="text-gray-400 ml-2">Ready to transform your business</span>
             </div>
           </motion.div>
         </motion.div>
@@ -67,12 +67,11 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="text-4xl md:text-6xl font-bold text-gray-100 mb-6 leading-tight"
           >
-            <span className="text-yellow-400">class</span>{' '}
-            <span className="text-blue-400">PARSoftware</span> {'{'}
+            <span className="text-yellow-400">PAR SOFTWARE</span>
             <br />
-            <span className="text-gray-400 ml-8">{'// We build the future of business'}</span>
+            <span className="text-blue-400">We Build The Future</span>
             <br />
-            {'}'}
+            <span className="text-gray-400 text-2xl md:text-3xl">of Business</span>
           </motion.h1>
           
           <motion.p

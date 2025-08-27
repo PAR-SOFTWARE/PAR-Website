@@ -45,12 +45,8 @@ const Contact = () => {
             <span>contact/</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-6 font-mono">
-            <span className="text-yellow-400">async</span>{' '}
-            <span className="text-blue-400">contactUs</span>() {'{'}
-            <br />
-            <span className="text-gray-400 ml-8">{'// Let&apos;s build something amazing'}</span>
-            <br />
-            {'}'}
+            <span className="text-yellow-400">Get In</span>{' '}
+            <span className="text-blue-400">Touch</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto font-mono">
             Ready to transform your business? We&apos;d love to hear from you and discuss how we can help.
@@ -76,7 +72,7 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-gray-300 text-sm font-mono mb-2">
-                      <span className="text-yellow-400">const</span> firstName
+                      First Name
                     </label>
                     <input
                       type="text"
@@ -87,7 +83,7 @@ const Contact = () => {
                   
                   <div>
                     <label className="block text-gray-300 text-sm font-mono mb-2">
-                      <span className="text-yellow-400">const</span> lastName
+                      Last Name
                     </label>
                     <input
                       type="text"
@@ -99,7 +95,7 @@ const Contact = () => {
                 
                 <div>
                   <label className="block text-gray-300 text-sm font-mono mb-2">
-                    <span className="text-yellow-400">const</span> email
+                    Email Address
                   </label>
                   <input
                     type="email"
@@ -110,7 +106,7 @@ const Contact = () => {
                 
                 <div>
                   <label className="block text-gray-300 text-sm font-mono mb-2">
-                    <span className="text-yellow-400">const</span> message
+                    Message
                   </label>
                   <textarea
                     rows={4}
