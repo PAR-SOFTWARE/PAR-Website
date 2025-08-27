@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, Phone, MapPin, Send, Terminal, Code, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, Send, Terminal, Code, MessageSquare } from 'lucide-react';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -13,19 +13,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@parsoftware.com',
-      link: 'mailto:hello@parsoftware.com'
+      value: 'ruben@parsoftware.co.za',
+      link: 'mailto:ruben@parsoftware.co.za'
     },
     {
-      icon: Phone,
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      icon: Mail,
+      title: 'Email',
+      value: 'erik@parsoftware.co.za',
+      link: 'mailto:erik@parsoftware.co.za'
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'South Africa',
       link: '#'
     }
   ];

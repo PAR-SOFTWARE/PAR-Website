@@ -38,7 +38,7 @@ const Footer = () => {
     { icon: Github, href: '#', label: 'GitHub' },
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:hello@parsoftware.com', label: 'Email' }
+    { icon: Mail, href: 'mailto:ruben@parsoftware.co.za', label: 'Email' }
   ];
 
   return (
@@ -206,7 +206,7 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono">
                 Terms of Service
               </a>
-              <span className="text-gray-600 font-mono">© 2024 PAR SOFTWARE</span>
+              <span className="text-gray-600 font-mono">© {new Date().getFullYear()} PAR SOFTWARE</span>
             </div>
           </div>
         </motion.div>

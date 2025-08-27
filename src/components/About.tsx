@@ -33,9 +33,9 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '10+', label: 'Years Experience', icon: Award },
-    { number: '200+', label: 'Happy Clients', icon: Users },
-    { number: '50+', label: 'Team Members', icon: Users },
+    { number: '4+', label: 'Years Experience', icon: Award },
+    { number: '20+', label: 'Happy Clients', icon: Users },
+    { number: '2hr', label: 'Average Response Time', icon: Users },
     { number: '99.9%', label: 'Uptime', icon: Database }
   ];
 

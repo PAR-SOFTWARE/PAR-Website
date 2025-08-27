@@ -153,9 +153,10 @@ const Services = () => {
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="btn-primary flex items-center gap-2 mx-auto"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <Code size={18} />
-            View All Services
+            Get Started
           </motion.button>
         </motion.div>
       </div>

@@ -109,6 +109,10 @@ const Navigation = () => {
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 className="w-full btn-primary flex items-center justify-center gap-2"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 <Code size={16} />
                 Get Started

@@ -100,6 +100,7 @@ const Hero = () => {
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="btn-primary flex items-center gap-2"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <Code size={18} />
             Start Your Project
@@ -124,8 +125,8 @@ const Hero = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
         >
           {[
-            { number: '500+', label: 'Projects Completed', icon: Code },
-            { number: '98%', label: 'Client Satisfaction', icon: Zap },
+            { number: '50+', label: 'Projects Delivered', icon: Code },
+            { number: '100%', label: 'Client Satisfaction', icon: Zap },
             { number: '24/7', label: 'Support Available', icon: Terminal }
           ].map((stat, index) => (
             <motion.div
