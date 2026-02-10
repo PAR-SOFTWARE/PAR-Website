@@ -187,26 +187,7 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Call to Action */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
-              className="text-center bg-white rounded-2xl shadow-lg border border-gray-100 p-8"
-            >
-              <p className="text-gray-600 mb-4 text-lg">
-                Ready to start your project?
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="btn-primary flex items-center gap-2 mx-auto"
-              >
-                <span>Schedule a Call</span>
-              </motion.button>
-            </motion.div>
+
           </motion.div>
         </div>
       </div>
