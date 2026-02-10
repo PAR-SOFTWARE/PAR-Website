@@ -74,7 +74,7 @@ const About = () => {
                   Our Vision
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  To be Africa's leading technology partner, empowering businesses across the continent 
+                  To be a leading technology partner in Africa, empowering businesses across the continent 
                   to harness the power of intelligent automation and digital innovation for unprecedented success 
                   and sustainable competitive advantage.
                 </p>

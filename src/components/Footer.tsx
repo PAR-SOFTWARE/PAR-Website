@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Terminal, Twitter, Linkedin, Mail, ChevronUp, Code, Heart, ArrowUp, Github } from 'lucide-react';
+import { Terminal, Twitter, Linkedin, Mail, Heart, ArrowUp, Github } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -35,8 +35,6 @@ const Footer = () => {
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:ruben@parsoftware.co.za', label: 'Email' }
   ];
-
-  const isInView = true; // Temporary fix for the animation
 
   return (
     <footer className="bg-white border-t border-gray-200 relative overflow-hidden">
