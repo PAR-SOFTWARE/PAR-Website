@@ -29,7 +29,7 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'nav-glass shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-white shadow-md border-b border-blue-100' : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,12 +39,12 @@ const Navigation = () => {
             whileHover={{ scale: 1.02 }}
             className="flex items-center space-x-3"
           >
-            <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
-              <Terminal size={20} className="text-gray-900" />
+            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+              <Terminal size={20} className="text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm text-gray-400 font-mono">monkey see</span>
-              <span className="text-xl font-bold text-gray-100 font-mono">PAR SOFTWARE</span>
+              <span className="text-xs text-blue-600 font-semibold tracking-widest">TECH</span>
+              <span className="text-lg font-bold text-gray-900">PAR SOFTWARE</span>
             </div>
           </motion.div>
 
@@ -55,7 +55,7 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href}
                 whileHover={{ y: -2 }}
-                className="text-gray-300 hover:text-yellow-400 font-mono font-medium transition-colors duration-200"
+                className="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 {item.name}
               </motion.a>
@@ -75,7 +75,7 @@ const Navigation = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-300 hover:text-yellow-400 transition-colors duration-200"
+              className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -90,7 +90,7 @@ const Navigation = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-gray-700"
+            className="md:hidden bg-white border-t border-blue-100"
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
@@ -99,7 +99,7 @@ const Navigation = () => {
                   href={item.href}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  className="block text-gray-300 hover:text-yellow-400 font-mono font-medium py-2 transition-colors duration-200"
+                  className="block text-gray-600 hover:text-blue-600 font-medium py-2 transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}

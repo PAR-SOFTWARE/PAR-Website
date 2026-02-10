@@ -1,150 +1,129 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Bot, Globe, Smartphone, Zap, Database, Shield, Code, Terminal } from 'lucide-react';
+import { Bot, Globe, Smartphone, Zap, Database, Shield, Code } from 'lucide-react';
 
 const Services = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const services = [
     {
       icon: Bot,
       title: 'AI Automation',
       description: 'Streamline your business processes with intelligent automation solutions that learn and adapt.',
       features: ['Process Automation', 'Machine Learning', 'Predictive Analytics'],
-      highlight: 'Smart & Efficient'
+      price: 'From R 40,000'
     },
     {
       icon: Globe,
       title: 'Web Development',
       description: 'Modern, responsive websites that convert visitors into customers with stunning design.',
       features: ['Responsive Design', 'SEO Optimized', 'Performance Focused'],
-      highlight: 'Modern & Fast'
+      price: 'From R 15,000'
     },
     {
       icon: Smartphone,
       title: 'Mobile Apps',
       description: 'Native and cross-platform mobile applications that engage users and drive growth.',
       features: ['iOS & Android', 'Cross-Platform', 'User-Centric Design'],
-      highlight: 'Mobile First'
+      price: 'From R 35,000'
     },
     {
       icon: Zap,
       title: 'Custom Software',
       description: 'Tailored software solutions designed specifically for your business needs.',
       features: ['Bespoke Solutions', 'Scalable Architecture', 'Integration Ready'],
-      highlight: 'Built for You'
+      price: 'From R 60,000+'
     },
     {
       icon: Database,
       title: 'Data Solutions',
       description: 'Transform your data into actionable insights with advanced analytics and visualization.',
       features: ['Data Analytics', 'Business Intelligence', 'Real-time Dashboards'],
-      highlight: 'Data Driven'
+      price: 'From R 25,000'
     },
     {
       icon: Shield,
       title: 'Security & Compliance',
       description: 'Enterprise-grade security measures to protect your business and ensure compliance.',
       features: ['Data Protection', 'GDPR Compliance', 'Security Audits'],
-      highlight: 'Secure & Compliant'
+      price: 'From R 15,000'
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
   return (
-    <section id="services" ref={ref} className="section-padding bg-[#0a0a0a] relative overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="services" className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 text-yellow-400 text-sm font-mono mb-4">
-            <Terminal size={16} />
-            <span>services/</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-6 font-mono">
-            <span className="text-yellow-400">Our</span>{' '}
-            <span className="text-blue-400">Services</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Services
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-mono">
-            We deliver comprehensive solutions that drive innovation and growth for your business
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Serving South African businesses with cutting-edge solutions that transform enterprises through intelligent automation and innovative technology.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {services.map((service) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
             <motion.div
               key={service.title}
-              variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.01 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="terminal-card group relative overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+              className="card group"
             >
-              {/* Service Icon */}
-              <div className="w-16 h-16 bg-yellow-400/10 border border-yellow-400/20 rounded-lg flex items-center justify-center mb-6 group-hover:border-yellow-400/40 transition-colors duration-300">
-                <service.icon size={32} className="text-yellow-400" />
+              <div className="w-12 h-12 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mb-6 group-hover:border-blue-300 transition-colors duration-300">
+                <service.icon size={24} className="text-blue-600" />
               </div>
               
-              {/* Service Title */}
-              <h3 className="text-2xl font-bold text-gray-100 mb-4 group-hover:text-yellow-400 transition-colors duration-300 font-mono">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {service.title}
               </h3>
               
-              {/* Service Description */}
-              <p className="text-gray-400 mb-6 leading-relaxed font-mono">
+              <p className="text-gray-600 mb-4 leading-relaxed">
                 {service.description}
               </p>
               
-              {/* Highlight Badge */}
-              <div className="bg-yellow-400/10 border border-yellow-400/20 rounded-md p-3 mb-6 text-center">
-                <span className="text-yellow-400 font-mono text-sm font-semibold">{service.highlight}</span>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {service.features.map((feature, featureIndex) => (
+                  <span
+                    key={featureIndex}
+                    className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full border border-blue-200"
+                  >
+                    {feature}
+                  </span>
+                ))}
               </div>
               
-              {/* Features List */}
-              <ul className="space-y-2">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-gray-400 font-mono text-sm">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold text-blue-600">
+                  {service.price}
+                </span>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                >
+                  Learn More →
+                </motion.button>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           className="text-center mt-16"
         >

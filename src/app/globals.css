@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 200, 200, 200;
-  --background-rgb: 18, 18, 18;
-  --accent-rgb: 255, 255, 0;
-  --code-bg: 28, 28, 28;
-  --border-rgb: 50, 50, 50;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 248, 250, 252;
+  --accent-rgb: 59, 130, 246;
+  --accent-light-rgb: 147, 197, 253;
+  --text-primary: 17, 24, 39;
+  --text-secondary: 107, 114, 128;
+  --border-rgb: 229, 231, 235;
 }
 
 * {
@@ -17,169 +20,103 @@
   margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  color: rgb(var(--text-primary));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
 }
 
-/* Terminal-style elements */
-.terminal-header {
-  background: rgb(var(--accent-rgb));
-  height: 4px;
-  width: 100%;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.terminal-window {
-  background: rgb(var(--code-bg));
-  border: 1px solid rgb(var(--border-rgb));
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.code-block {
-  background: rgb(var(--code-bg));
-  border: 1px solid rgb(var(--border-rgb));
-  border-radius: 6px;
-  padding: 1.5rem;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
+/* Text Gradient */
 .text-gradient {
-  background: linear-gradient(135deg, rgb(var(--accent-rgb)) 0%, #ff6b6b 100%);
+  background: linear-gradient(135deg, rgb(var(--accent-rgb)), rgb(var(--accent-light-rgb)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Buttons */
-.btn-primary {
-  background: transparent;
-  color: rgb(var(--accent-rgb));
-  border: 2px solid rgb(var(--accent-rgb));
-  padding: 0.75rem 1.5rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 500;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  cursor: pointer;
+/* Hero Gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, rgb(var(--accent-rgb)), rgb(var(--accent-light-rgb)));
 }
 
-.btn-primary:hover {
-  background: rgb(var(--accent-rgb));
-  color: rgb(var(--background-rgb));
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 255, 0, 0.3);
+/* Button Styles */
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
 }
 
 .btn-secondary {
-  background: transparent;
-  color: rgb(var(--foreground-rgb));
-  border: 1px solid rgb(var(--border-rgb));
-  padding: 0.75rem 1.5rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 400;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  cursor: pointer;
+  @apply inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-700 font-medium rounded-lg border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
 }
 
-.btn-secondary:hover {
-  background: rgb(var(--border-rgb));
-  border-color: rgb(var(--accent-rgb));
-}
-
-/* Navigation */
+/* Navigation Glass */
 .nav-glass {
-  background: rgba(18, 18, 18, 0.95);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgb(var(--border-rgb));
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
 }
 
-/* Cards */
-.terminal-card {
-  background: rgb(var(--code-bg));
-  border: 1px solid rgb(var(--border-rgb));
-  border-radius: 6px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
+/* Card Styles */
+.card {
+  @apply bg-white rounded-2xl shadow-xl border border-gray-100 p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1;
 }
 
-.terminal-card:hover {
-  border-color: rgb(var(--accent-rgb));
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(255, 255, 0, 0.1);
+/* Motion Div for Performance */
+.motion-div {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
-/* Cursor animation */
-.cursor-blink {
-  animation: blink 1s infinite;
+@media (prefers-reduced-motion: reduce) {
+  .motion-div {
+    will-change: auto;
+  }
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-/* Scrollbar */
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(var(--code-bg));
+  background: rgb(248, 250, 252);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(var(--border-rgb));
+  background: rgb(203, 213, 225);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--accent-rgb));
+  background: rgb(148, 163, 184);
 }
 
-/* Selection */
+/* Selection Styling */
 ::selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: rgb(var(--foreground-rgb));
+  background: rgba(59, 130, 246, 0.2);
+  color: rgb(17, 24, 39);
 }
-
-/* Section spacing */
-.section-padding {
-  padding: 120px 0;
-}
-
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 80px 0;
-  }
-}
-
-/* Terminal prompt style */
-.terminal-prompt::before {
-  content: "$ ";
-  color: rgb(var(--accent-rgb));
-  font-weight: 600;
-}
-
-/* Code syntax highlighting */
-.keyword { color: #ff6b6b; }
-.string { color: #51cf66; }
-.number { color: #339af0; }
-.comment { color: #868e96; font-style: italic; }
-.function { color: #fcc419; }

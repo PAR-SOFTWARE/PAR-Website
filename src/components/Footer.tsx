@@ -1,14 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Terminal, Code, ArrowUp, Github, Twitter, Linkedin, Mail, Heart } from 'lucide-react';
+import { Terminal, Twitter, Linkedin, Mail, ChevronUp, Code, Heart, ArrowUp, Github } from 'lucide-react';
 
 const Footer = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -41,31 +36,34 @@ const Footer = () => {
     { icon: Mail, href: 'mailto:ruben@parsoftware.co.za', label: 'Email' }
   ];
 
+  const isInView = true; // Temporary fix for the animation
+
   return (
-    <footer ref={ref} className="bg-[#0a0a0a] border-t border-gray-800 relative overflow-hidden">
+    <footer className="bg-white border-t border-gray-200 relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
           {/* Top Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12"
           >
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
-                  <Terminal size={20} className="text-gray-900" />
+                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <Terminal size={20} className="text-white" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-400 font-mono">monkey see</span>
-                  <span className="text-xl font-bold text-gray-100 font-mono">PAR SOFTWARE</span>
+                  <span className="text-xs text-blue-600 font-semibold tracking-widest">TECH</span>
+                  <span className="text-xl font-bold text-gray-900">PAR SOFTWARE</span>
                 </div>
               </div>
               
-              <p className="text-gray-400 font-mono mb-6 max-w-md">
+              <p className="text-gray-600 mb-6 max-w-md">
                 Building the future of business through intelligent automation, 
                 innovative software solutions, and exceptional user experiences.
               </p>
@@ -77,7 +75,7 @@ const Footer = () => {
                     key={social.label}
                     href={social.href}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="w-10 h-10 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 transition-all duration-200"
+                    className="w-10 h-10 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center text-gray-600 hover:text-blue-600 hover:border-blue-400 transition-all duration-200"
                   >
                     <social.icon size={18} />
                   </motion.a>
@@ -87,7 +85,7 @@ const Footer = () => {
 
             {/* Company Links */}
             <div>
-              <h3 className="text-gray-100 font-bold mb-6 font-mono">
+              <h3 className="text-gray-900 font-bold mb-6">
                 Company
               </h3>
               <ul className="space-y-3">
@@ -95,7 +93,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono text-sm"
+                      className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm"
                     >
                       {link.name}
                     </a>
@@ -106,7 +104,7 @@ const Footer = () => {
 
             {/* Services Links */}
             <div>
-              <h3 className="text-gray-100 font-bold mb-6 font-mono">
+              <h3 className="text-gray-900 font-bold mb-6">
                 Services
               </h3>
               <ul className="space-y-3">
@@ -114,7 +112,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono text-sm"
+                      className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm"
                     >
                       {link.name}
                     </a>
@@ -125,7 +123,7 @@ const Footer = () => {
 
             {/* Support Links */}
             <div>
-              <h3 className="text-gray-100 font-bold mb-6 font-mono">
+              <h3 className="text-gray-900 font-bold mb-6">
                 Support
               </h3>
               <ul className="space-y-3">
@@ -133,7 +131,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono text-sm"
+                      className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm"
                     >
                       {link.name}
                     </a>
@@ -146,22 +144,16 @@ const Footer = () => {
           {/* Newsletter Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="terminal-window p-8 mb-12"
+            className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 mb-12"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              <span className="text-gray-400 text-sm font-mono ml-4">newsletter.js</span>
-            </div>
-            
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-100 mb-4 font-mono">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 Stay Updated
               </h3>
-              <p className="text-gray-400 font-mono mb-6">
+              <p className="text-blue-100 mb-6">
                 Get our latest insights and tech updates delivered to your inbox
               </p>
               
@@ -169,15 +161,14 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 bg-gray-900 border border-gray-700 rounded-md px-4 py-3 text-gray-100 font-mono focus:border-yellow-400 focus:outline-none transition-colors duration-200"
+                  className="flex-1 bg-white border-0 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none transition-colors duration-200"
                 />
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="btn-primary flex items-center gap-2 whitespace-nowrap"
+                  className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition-all duration-200 whitespace-nowrap"
                 >
-                  <Code size={16} />
                   Subscribe
                 </motion.button>
               </div>
@@ -188,25 +179,26 @@ const Footer = () => {
         {/* Bottom Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          className="border-t border-gray-800 py-8"
+          className="border-t border-gray-200 py-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 text-gray-400 font-mono text-sm mb-4 md:mb-0">
+            <div className="flex items-center space-x-2 text-gray-600 text-sm mb-4 md:mb-0">
               <span>Made with</span>
-              <Heart size={14} className="text-red-400" />
+              <Heart size={14} className="text-blue-600" />
               <span>by PAR SOFTWARE</span>
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono">
+              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 font-mono">
+              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                 Terms of Service
               </a>
-              <span className="text-gray-600 font-mono">© {new Date().getFullYear()} PAR SOFTWARE</span>
+              <span className="text-gray-600">© {new Date().getFullYear()} PAR SOFTWARE</span>
             </div>
           </div>
         </motion.div>
@@ -217,7 +209,7 @@ const Footer = () => {
         onClick={scrollToTop}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-yellow-400 text-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all duration-200 flex items-center justify-center"
       >
         <ArrowUp size={20} />
       </motion.button>

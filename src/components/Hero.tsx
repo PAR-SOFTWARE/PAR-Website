@@ -9,51 +9,15 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#121212]">
-      {/* Terminal Header Bar */}
-      <div className="terminal-header" />
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-40 left-40 w-80 h-80 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float" style={{ animationDelay: '4s' }}></div>
+      </div>
       
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-20">
-        {/* Terminal Window */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="terminal-window p-8 mb-8"
-        >
-          <div className="flex items-center justify-between mb-6 text-sm text-gray-400">
-            <div className="flex items-center space-x-2">
-              <Terminal size={16} />
-              <span>PAR_SOFTWARE</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            </div>
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-left"
-          >
-            <div className="mb-4">
-              <span className="text-yellow-400">$</span>
-              <span className="text-gray-400 ml-2">Welcome to PAR Software</span>
-            </div>
-            <div className="mb-4">
-              <span className="text-yellow-400">$</span>
-              <span className="text-gray-400 ml-2">Loading amazing solutions...</span>
-            </div>
-            <div className="mb-6">
-              <span className="text-green-400">✓</span>
-              <span className="text-gray-400 ml-2">Ready to transform your business</span>
-            </div>
-          </motion.div>
-        </motion.div>
-
         {/* Main Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,26 +29,26 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-bold text-gray-100 mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
           >
-            <span className="text-yellow-400">PAR SOFTWARE</span>
+            Transforming Business
             <br />
-            <span className="text-blue-400">We Build The Future</span>
+            <span className="text-blue-600">With Intelligent Solutions</span>
             <br />
-            <span className="text-gray-400 text-2xl md:text-3xl">of Business</span>
+            <span className="text-gray-700 text-2xl md:text-3xl">Powered by Innovation</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-            className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
-            <span className="text-yellow-400">PAR SOFTWARE</span> specializes in{' '}
-            <span className="text-green-400">AI Automation</span> for companies. 
-            We build cutting-edge <span className="text-blue-400">apps</span>,{' '}
-            <span className="text-blue-400">websites</span>, and intelligent solutions 
-            that transform how businesses operate.
+            Based in <span className="font-semibold text-blue-600">South Africa</span>, <span className="font-semibold text-blue-600">PAR SOFTWARE</span> specializes in{' '}
+            <span className="font-semibold text-blue-600">AI Automation</span> and innovative software solutions
+            for forward-thinking companies. We build cutting-edge <span className="font-semibold text-blue-600">applications</span>, 
+            scalable <span className="font-semibold text-blue-600">web platforms</span>, and intelligent systems 
+            that drive real business growth.
           </motion.p>
         </motion.div>
 
@@ -117,7 +81,7 @@ const Hero = () => {
           </motion.button>
         </motion.div>
 
-        {/* Stats in Terminal Cards */}
+        {/* Stats in Cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -134,15 +98,15 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.2 + index * 0.1, ease: "easeOut" }}
-              className="terminal-card text-center group"
+              className="card text-center group"
             >
-              <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:border-yellow-400/40 transition-colors duration-300">
-                <stat.icon size={24} className="text-yellow-400" />
+              <div className="w-12 h-12 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:border-blue-300 transition-colors duration-300">
+                <stat.icon size={24} className="text-blue-600" />
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-2">
+              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-400 text-sm">
+              <div className="text-gray-600 text-sm">
                 {stat.label}
               </div>
             </motion.div>
@@ -161,7 +125,7 @@ const Hero = () => {
           onClick={scrollToNext}
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="text-gray-500 hover:text-yellow-400 transition-colors duration-200"
+          className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
         >
           <ChevronDown size={24} />
         </motion.button>

@@ -1,34 +1,24 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Users, Target, Zap, Award, Terminal, Database, Shield } from 'lucide-react';
+import { Award, Users, Database, Zap } from 'lucide-react';
 
 const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const values = [
     {
-      icon: Target,
-      title: 'Innovation First',
-      description: 'We push boundaries and embrace cutting-edge technologies to deliver exceptional solutions.'
+      icon: Zap,
+      title: 'Innovation',
+      description: 'We constantly push boundaries to deliver cutting-edge solutions that give our clients a competitive edge.'
+    },
+    {
+      icon: Award,
+      title: 'Excellence',
+      description: 'Every project is crafted with attention to detail and a commitment to delivering exceptional quality.'
     },
     {
       icon: Users,
-      title: 'Client-Centric',
-      description: 'Your success is our priority. We build solutions that align with your business goals.'
-    },
-    {
-      icon: Zap,
-      title: 'Agile Delivery',
-      description: 'Fast, iterative development that adapts to your evolving needs and market changes.'
-    },
-    {
-      icon: Shield,
-      title: 'Quality Assured',
-      description: 'Rigorous testing and best practices ensure reliable, scalable, and secure solutions.'
+      title: 'Collaboration',
+      description: 'We work closely with our clients to understand their needs and ensure their vision becomes reality.'
     }
   ];
 
@@ -40,61 +30,55 @@ const About = () => {
   ];
 
   return (
-    <section id="about" ref={ref} className="section-padding bg-[#121212] relative overflow-hidden">
+    <section id="about" className="py-20 bg-gray-50 relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 text-yellow-400 text-sm font-mono mb-4">
-            <Terminal size={16} />
-            <span>about/</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-6 font-mono">
-            <span className="text-yellow-400">About</span>{' '}
-            <span className="text-blue-400">PAR SOFTWARE</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            About <span className="text-blue-600">PAR SOFTWARE</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-mono">
-            Discover the team behind the technology and our mission to transform businesses through innovation
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            A South African tech company dedicated to transforming African businesses through intelligent automation, cutting-edge technology, and exceptional service.
           </p>
         </motion.div>
 
         {/* Mission Statement */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="mb-20"
         >
-          <div className="terminal-window p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              <span className="text-gray-400 text-sm font-mono ml-4">mission.md</span>
-            </div>
-            
-            <div className="space-y-4 text-left">
-              <div className="text-gray-300 font-mono">
-                <span className="text-yellow-400">#</span> Our Mission
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12">
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-2xl font-bold text-blue-600 mb-4">
+                  Our Mission
+                </h3>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  To revolutionize how African businesses operate by leveraging cutting-edge AI automation, 
+                  innovative software solutions, and exceptional service that drives sustainable growth 
+                  and digital transformation across the continent.
+                </p>
               </div>
-              <p className="text-gray-400 font-mono leading-relaxed">
-                To revolutionize how businesses operate by leveraging cutting-edge AI automation, 
-                innovative software solutions, and exceptional user experiences that drive growth 
-                and efficiency in the digital age.
-              </p>
               
-              <div className="text-gray-300 font-mono mt-6">
-                <span className="text-yellow-400">##</span> Vision
+              <div className="pt-8 border-t border-gray-200">
+                <h3 className="text-2xl font-bold text-blue-600 mb-4">
+                  Our Vision
+                </h3>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  To be Africa's leading technology partner, empowering businesses across the continent 
+                  to harness the power of intelligent automation and digital innovation for unprecedented success 
+                  and sustainable competitive advantage.
+                </p>
               </div>
-              <p className="text-gray-400 font-mono leading-relaxed">
-                To be the leading force in business transformation, where every company can 
-                harness the power of intelligent automation and digital innovation to achieve 
-                unprecedented success.
-              </p>
             </div>
           </div>
         </motion.div>
@@ -102,33 +86,34 @@ const About = () => {
         {/* Values Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="mb-20"
         >
-          <h3 className="text-2xl font-bold text-gray-100 mb-12 text-center font-mono">
-            <span className="text-yellow-400">Our</span>{' '}
-            <span className="text-blue-400">Core Values</span>
+          <h3 className="text-2xl font-bold text-gray-900 mb-12 text-center">
+            Our <span className="text-blue-600">Core Values</span>
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1, ease: "easeOut" }}
-                className="terminal-card text-center group"
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="w-16 h-16 bg-yellow-400/10 border border-yellow-400/20 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:border-yellow-400/40 transition-colors duration-300">
-                  <value.icon size={32} className="text-yellow-400" />
+                <div className="w-16 h-16 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:border-blue-300 transition-colors duration-300">
+                  <value.icon size={32} className="text-blue-600" />
                 </div>
                 
-                <h4 className="text-xl font-bold text-gray-100 mb-4 font-mono">
+                <h4 className="text-xl font-bold text-gray-900 mb-4">
                   {value.title}
                 </h4>
                 
-                <p className="text-gray-400 text-sm font-mono leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
@@ -139,13 +124,13 @@ const About = () => {
         {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-gray-100 mb-12 font-mono">
-            <span className="text-yellow-400">Our</span>{' '}
-            <span className="text-blue-400">Numbers</span>
+          <h3 className="text-2xl font-bold text-gray-900 mb-12">
+            By The <span className="text-blue-600">Numbers</span>
           </h3>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -153,19 +138,20 @@ const About = () => {
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.95 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 1 + index * 0.1, ease: "easeOut" }}
-                className="text-center"
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-16 h-16 bg-yellow-400/10 border border-yellow-400/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <stat.icon size={32} className="text-yellow-400" />
+                <div className="w-12 h-12 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <stat.icon size={24} className="text-blue-600" />
                 </div>
                 
-                <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2 font-mono">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
                   {stat.number}
                 </div>
                 
-                <div className="text-gray-400 text-sm font-mono">
+                <div className="text-gray-600 text-sm">
                   {stat.label}
                 </div>
               </motion.div>
