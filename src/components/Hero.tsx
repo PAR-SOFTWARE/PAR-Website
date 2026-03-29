@@ -12,9 +12,9 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-40 left-40 w-80 h-80 bg-gray-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
       
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-20">
@@ -33,7 +33,7 @@ const Hero = () => {
           >
             Transforming Business
             <br />
-            <span className="text-blue-600">With Intelligent Solutions</span>
+            <span className="text-black">With Intelligent Solutions</span>
             <br />
             <span className="text-gray-700 text-2xl md:text-3xl">Powered by Innovation</span>
           </motion.h1>
@@ -44,10 +44,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
-            Based in <span className="font-semibold text-blue-600">South Africa</span>, <span className="font-semibold text-blue-600">PAR SOFTWARE</span> specializes in{' '}
-            <span className="font-semibold text-blue-600">AI Automation</span> and innovative software solutions
-            for forward-thinking companies. We build cutting-edge <span className="font-semibold text-blue-600">applications</span>, 
-            scalable <span className="font-semibold text-blue-600">web platforms</span>, and intelligent systems 
+            Based in <span className="font-semibold text-black">South Africa</span>, <span className="font-semibold text-black">PAR SOFTWARE</span> specializes in{' '}
+            <span className="font-semibold text-black">AI Automation</span> and innovative software solutions
+            for forward-thinking companies. We build cutting-edge <span className="font-semibold text-black">applications</span>,
+            scalable <span className="font-semibold text-black">web platforms</span>, and intelligent systems
             that drive real business growth.
           </motion.p>
         </motion.div>
@@ -100,10 +100,10 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 1.2 + index * 0.1, ease: "easeOut" }}
               className="card text-center group"
             >
-              <div className="w-12 h-12 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:border-blue-300 transition-colors duration-300">
-                <stat.icon size={24} className="text-blue-600" />
+              <div className="w-12 h-12 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:border-gray-400 transition-colors duration-300">
+                <stat.icon size={24} className="text-black" />
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">
+              <div className="text-2xl md:text-3xl font-bold text-black mb-2">
                 {stat.number}
               </div>
               <div className="text-gray-600 text-sm">
@@ -125,7 +125,7 @@ const Hero = () => {
           onClick={scrollToNext}
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
+          className="text-gray-400 hover:text-black transition-colors duration-200"
         >
           <ChevronDown size={24} />
         </motion.button>

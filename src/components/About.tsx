@@ -41,7 +41,7 @@ const About = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About <span className="text-blue-600">PAR SOFTWARE</span>
+            About <span className="text-black">PAR SOFTWARE</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A South African tech company dedicated to transforming African businesses through intelligent automation, cutting-edge technology, and exceptional service.
@@ -59,7 +59,7 @@ const About = () => {
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12">
             <div className="space-y-4">
               <div>
-                <h3 className="text-2xl font-bold text-blue-600 mb-4">
+                <h3 className="text-2xl font-bold text-black mb-4">
                   Our Mission
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-lg">
@@ -70,7 +70,7 @@ const About = () => {
               </div>
               
               <div className="pt-8 border-t border-gray-200">
-                <h3 className="text-2xl font-bold text-blue-600 mb-4">
+                <h3 className="text-2xl font-bold text-black mb-4">
                   Our Vision
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-lg">
@@ -92,7 +92,7 @@ const About = () => {
           className="mb-20"
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-12 text-center">
-            Our <span className="text-blue-600">Core Values</span>
+            Our <span className="text-black">Core Values</span>
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -105,8 +105,8 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1, ease: "easeOut" }}
                 className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="w-16 h-16 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:border-blue-300 transition-colors duration-300">
-                  <value.icon size={32} className="text-blue-600" />
+                <div className="w-16 h-16 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:border-gray-400 transition-colors duration-300">
+                  <value.icon size={32} className="text-black" />
                 </div>
                 
                 <h4 className="text-xl font-bold text-gray-900 mb-4">
@@ -130,7 +130,7 @@ const About = () => {
           className="text-center"
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-12">
-            By The <span className="text-blue-600">Numbers</span>
+            By The <span className="text-black">Numbers</span>
           </h3>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -143,11 +143,11 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 1 + index * 0.1, ease: "easeOut" }}
                 className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <stat.icon size={24} className="text-blue-600" />
+                <div className="w-12 h-12 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <stat.icon size={24} className="text-black" />
                 </div>
-                
-                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+
+                <div className="text-3xl md:text-4xl font-bold text-black mb-2">
                   {stat.number}
                 </div>
                 

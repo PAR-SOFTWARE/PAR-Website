@@ -40,7 +40,7 @@ const Contact = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Get In <span className="text-blue-600">Touch</span>
+            Get In <span className="text-black">Touch</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Based in South Africa, serving businesses locally and across Africa. Ready to transform your business? We&apos;d love to hear from you.
@@ -68,7 +68,7 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none transition-colors duration-200"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-black focus:bg-white focus:outline-none transition-colors duration-200"
                       placeholder="Enter your first name"
                     />
                   </div>
@@ -79,7 +79,7 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none transition-colors duration-200"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-black focus:bg-white focus:outline-none transition-colors duration-200"
                       placeholder="Enter your last name"
                     />
                   </div>
@@ -91,7 +91,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
-                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none transition-colors duration-200"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-black focus:bg-white focus:outline-none transition-colors duration-200"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -102,7 +102,7 @@ const Contact = () => {
                   </label>
                   <textarea
                     rows={4}
-                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none transition-colors duration-200 resize-none"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-black focus:bg-white focus:outline-none transition-colors duration-200 resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -139,8 +139,8 @@ const Contact = () => {
                   className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center group-hover:border-blue-300 transition-colors duration-300">
-                      <info.icon size={24} className="text-blue-600" />
+                    <div className="w-12 h-12 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center group-hover:border-gray-400 transition-colors duration-300">
+                      <info.icon size={24} className="text-black" />
                     </div>
                     
                     <div>
@@ -149,7 +149,7 @@ const Contact = () => {
                       </h3>
                       <a
                         href={info.link}
-                        className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                        className="text-gray-600 hover:text-black transition-colors duration-200"
                       >
                         {info.value}
                       </a>
@@ -165,24 +165,24 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
-              className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200 p-6"
+              className="bg-gray-50 rounded-2xl border border-gray-200 p-6"
             >
-              <h4 className="text-lg font-bold text-blue-900 mb-4">
+              <h4 className="text-lg font-bold text-gray-900 mb-4">
                 Response Time
               </h4>
               
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-blue-700 font-medium">Initial Response:</span>
-                  <span className="text-blue-600 font-semibold">Within 2 hours</span>
+                  <span className="text-gray-700 font-medium">Initial Response:</span>
+                  <span className="text-black font-semibold">Within 2 hours</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-blue-700 font-medium">Project Quote:</span>
-                  <span className="text-blue-600 font-semibold">Within 24 hours</span>
+                  <span className="text-gray-700 font-medium">Project Quote:</span>
+                  <span className="text-black font-semibold">Within 24 hours</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-blue-700 font-medium">Support:</span>
-                  <span className="text-blue-600 font-semibold">24/7 Available</span>
+                  <span className="text-gray-700 font-medium">Support:</span>
+                  <span className="text-black font-semibold">24/7 Available</span>
                 </div>
               </div>
             </motion.div>

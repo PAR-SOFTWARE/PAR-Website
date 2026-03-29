@@ -79,8 +79,8 @@ const Services = () => {
               transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               className="card group"
             >
-              <div className="w-12 h-12 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mb-6 group-hover:border-blue-300 transition-colors duration-300">
-                <service.icon size={24} className="text-blue-600" />
+              <div className="w-12 h-12 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center mb-6 group-hover:border-gray-400 transition-colors duration-300">
+                <service.icon size={24} className="text-black" />
               </div>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -95,7 +95,7 @@ const Services = () => {
                 {service.features.map((feature, featureIndex) => (
                   <span
                     key={featureIndex}
-                    className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full border border-blue-200"
+                    className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full border border-gray-200"
                   >
                     {feature}
                   </span>
@@ -103,14 +103,14 @@ const Services = () => {
               </div>
               
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-blue-600">
+                <span className="text-2xl font-bold text-black">
                   {service.price}
                 </span>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
                 >
                   Learn More →
                 </motion.button>
