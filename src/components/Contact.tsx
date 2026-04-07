@@ -226,6 +226,26 @@ const Contact = () => {
               </div>
             </motion.div>
 
+            {/* Google Map */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+              className="rounded-2xl overflow-hidden border border-gray-200 shadow-lg"
+              style={{ height: 220 }}
+            >
+              <iframe
+                title="PAR SOFTWARE location – South Africa"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14710234.45329839!2d17.0!3d-29.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1c34a689d9ee1251%3A0xe85d630c1fa4e8a0!2sSouth%20Africa!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
+                width="100%"
+                height="220"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </motion.div>
 
           </motion.div>
         </div>

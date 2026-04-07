@@ -61,11 +61,33 @@ const Footer = () => {
                 </div>
               </div>
               
-              <p className="text-gray-600 mb-6 max-w-md">
-                Building the future of business through intelligent automation, 
+              <p className="text-gray-600 mb-4 max-w-md">
+                Building the future of business through intelligent automation,
                 innovative software solutions, and exceptional user experiences.
               </p>
-              
+
+              {/* NAP — Name, Address, Phone (schema-friendly) */}
+              <address
+                className="not-italic text-sm text-gray-500 mb-6 space-y-1"
+                itemScope
+                itemType="https://schema.org/LocalBusiness"
+              >
+                <span itemProp="name" className="sr-only">PAR SOFTWARE</span>
+                <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                  <span itemProp="addressRegion">South Africa</span>
+                </div>
+                <div>
+                  <a href="mailto:ruben@parsoftware.co.za" itemProp="email" className="hover:text-black transition-colors duration-200">
+                    ruben@parsoftware.co.za
+                  </a>
+                </div>
+                <div>
+                  <a href="mailto:erik@parsoftware.co.za" itemProp="email" className="hover:text-black transition-colors duration-200">
+                    erik@parsoftware.co.za
+                  </a>
+                </div>
+              </address>
+
               {/* Social Links */}
               <div className="flex space-x-4">
                 {socialLinks.map((social) => (
