@@ -17,7 +17,7 @@ const Hero = () => (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
-          {/* Left — content */}
+          {/* Left - content */}
           <div>
             <motion.p
               initial={{ opacity: 0, y: 8 }}
@@ -92,7 +92,7 @@ const Hero = () => (
             </motion.div>
           </div>
 
-          {/* Right — logo mark with animated rings */}
+          {/* Right - logo mark with animated rings */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}

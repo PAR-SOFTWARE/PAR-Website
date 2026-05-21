@@ -81,7 +81,7 @@ const About = () => (
         ))}
       </motion.div>
 
-      {/* Mission / Vision — teal inverted card */}
+      {/* Mission / Vision - teal inverted card */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ const About = () => (
             style={{ color: 'rgba(255,255,255,0.82)', lineHeight: 1.7, fontWeight: 400 }}
           >
             To help African businesses operate smarter by applying AI automation and modern
-            software — driving sustainable growth and digital transformation across the continent.
+            software - driving sustainable growth and digital transformation across the continent.
           </p>
         </div>
         <div>

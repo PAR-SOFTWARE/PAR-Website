@@ -25,7 +25,7 @@ const services = [
   {
     icon: Zap,
     title: 'Custom Software',
-    description: 'Tailored software built precisely around your business requirements — no off-the-shelf compromise.',
+    description: 'Tailored software built precisely around your business requirements - no off-the-shelf compromise.',
     features: ['Bespoke Solutions', 'Scalable Architecture', 'Integration Ready'],
   },
   {

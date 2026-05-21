@@ -28,7 +28,7 @@ const HeroLogoMark = () => (
       />
     ))}
 
-    {/* Slow rotating dashed ring — just outside logo */}
+    {/* Slow rotating dashed ring - just outside logo */}
     <motion.span
       className="absolute rounded-full pointer-events-none"
       style={{
@@ -40,7 +40,7 @@ const HeroLogoMark = () => (
       transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
     />
 
-    {/* Reverse-rotating dotted ring — wider */}
+    {/* Reverse-rotating dotted ring - wider */}
     <motion.span
       className="absolute rounded-full pointer-events-none"
       style={{

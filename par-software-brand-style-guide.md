@@ -1,4 +1,4 @@
-# Par Software — Brand Style Guide
+# Par Software - Brand Style Guide
 
 ---
 
@@ -56,7 +56,7 @@
 
 | Background | Text | Usage |
 |------------|------|-------|
-| `#0E565A` | `#ACFEA5` | Primary dark surface — hero, nav |
+| `#0E565A` | `#ACFEA5` | Primary dark surface - hero, nav |
 | `#0E565A` | `#FFFFFF` | Headers, CTAs, nav items |
 | `#ACFEA5` | `#0E565A` | Badges, highlights, tags |
 | `#F4F6F6` | `#0E565A` | Cards, content sections |
@@ -66,7 +66,7 @@
 
 ## Typography
 
-> Font family TBD — to be confirmed with UX designer.
+> Font family TBD - to be confirmed with UX designer.
 
 | Level | Size | Weight | Line Height | Usage |
 |-------|------|--------|-------------|-------|
@@ -138,4 +138,4 @@ Base unit: `1rem = 16px`
 
 ---
 
-*Last updated: May 2026 — Par Software*
+*Last updated: May 2026 - Par Software*
