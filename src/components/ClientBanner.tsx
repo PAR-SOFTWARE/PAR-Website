@@ -6,7 +6,6 @@ const clients = [
   { name: 'Ironclad Gym', url: 'https://ironclad-gym.vercel.app' },
   { name: 'Kestrel Co', url: 'https://kestrel-co.vercel.app' },
   { name: 'Lumis Dental', url: 'https://lumis-dental.vercel.app' },
-  { name: 'Mossbrook Farm', url: 'https://mossbrook-farm.vercel.app' },
   { name: 'Nimble Kids', url: 'https://nimble-kids.vercel.app' },
   { name: 'Tidewater Brewing', url: 'https://tidewater-brewing.vercel.app' },
   { name: 'Veldfire Studio', url: 'https://veldfire-studio.vercel.app' },
