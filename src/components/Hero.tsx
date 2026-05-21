@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import HeroLogoMark from './HeroLogoMark';
+import ClientBanner from './ClientBanner';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -132,22 +133,32 @@ const Hero = () => (
       </div>
     </div>
 
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1.2 }}
-      className="flex justify-center pb-6"
-    >
-      <motion.button
-        onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-        animate={{ y: [0, 6, 0] }}
-        transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-        style={{ color: 'rgba(255,255,255,0.35)' }}
-        aria-label="Scroll down"
+    <div className="flex flex-col">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className="flex justify-center pb-6"
       >
-        <ChevronDown size={22} />
-      </motion.button>
-    </motion.div>
+        <motion.button
+          onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ color: 'rgba(255,255,255,0.35)' }}
+          aria-label="Scroll down"
+        >
+          <ChevronDown size={22} />
+        </motion.button>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+      >
+        <ClientBanner />
+      </motion.div>
+    </div>
 
   </section>
 );
