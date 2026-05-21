@@ -1,137 +1,155 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown, Play, Terminal, Code, Zap } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import HeroLogoMark from './HeroLogoMark';
 
-const Hero = () => {
-  const scrollToNext = () => {
-    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-  };
+const ease = [0.16, 1, 0.3, 1] as const;
 
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-gray-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{ animationDelay: '4s' }}></div>
-      </div>
-      
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-20">
-        {/* Main Content */}
+const Hero = () => (
+  <section
+    id="home"
+    className="min-h-[100dvh] flex flex-col justify-between pt-16"
+    style={{ backgroundColor: 'var(--teal-600)' }}
+  >
+    <div className="flex-1 flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+          {/* Left — content */}
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease }}
+              className="text-xs font-medium uppercase mb-8"
+              style={{ color: 'var(--mint-300)', letterSpacing: '0.06em', fontWeight: 500 }}
+            >
+              South African Software Studio
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1, ease }}
+              className="mb-8"
+              style={{
+                fontSize: 'clamp(2.5rem, 4.5vw, 3.5rem)',
+                fontWeight: 500,
+                lineHeight: 1.1,
+                color: '#ffffff',
+              }}
+            >
+              We build software<br />
+              that moves{' '}
+              <span style={{ color: 'var(--mint-300)' }}>businesses<br />forward.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2, ease }}
+              className="text-base mb-12 max-w-md"
+              style={{ color: 'var(--teal-200)', lineHeight: 1.7, fontWeight: 400 }}
+            >
+              PAR SOFTWARE specializes in AI automation, web development, and custom
+              software solutions for South African companies ready to grow.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3, ease }}
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm transition-all duration-200 active:scale-[0.97]"
+                style={{
+                  backgroundColor: 'var(--mint-300)',
+                  color: 'var(--teal-800)',
+                  borderRadius: 'var(--radius-md)',
+                  fontWeight: 500,
+                }}
+              >
+                Start a project
+                <ArrowRight size={15} />
+              </button>
+
+              <button
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm transition-all duration-200 active:scale-[0.97]"
+                style={{
+                  color: 'rgba(255,255,255,0.85)',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  borderRadius: 'var(--radius-md)',
+                  fontWeight: 500,
+                }}
+              >
+                Our services
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Right — logo mark with animated rings */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.25, ease }}
+            className="hidden lg:flex items-center justify-center"
+          >
+            <HeroLogoMark />
+          </motion.div>
+
+        </div>
+
+        {/* Stats strip */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="mb-12"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
-          >
-            Transforming Business
-            <br />
-            <span className="text-black">With Intelligent Solutions</span>
-            <br />
-            <span className="text-gray-700 text-2xl md:text-3xl">Powered by Innovation</span>
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-            className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed"
-          >
-            Based in <span className="font-semibold text-black">South Africa</span>, <span className="font-semibold text-black">PAR SOFTWARE</span> specializes in{' '}
-            <span className="font-semibold text-black">AI Automation</span> and innovative software solutions
-            for forward-thinking companies. We build cutting-edge <span className="font-semibold text-black">applications</span>,
-            scalable <span className="font-semibold text-black">web platforms</span>, and intelligent systems
-            that drive real business growth.
-          </motion.p>
-        </motion.div>
-
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="btn-primary flex items-center gap-2"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            <Code size={18} />
-            Start Your Project
-          </motion.button>
-          
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="btn-secondary flex items-center gap-2"
-          >
-            <Play size={18} />
-            Watch Demo
-          </motion.button>
-        </motion.div>
-
-        {/* Stats in Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-20 pt-8 grid grid-cols-3 gap-8 max-w-sm"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}
         >
           {[
-            { number: '50+', label: 'Projects Delivered', icon: Code },
-            { number: '100%', label: 'Client Satisfaction', icon: Zap },
-            { number: '24/7', label: 'Support Available', icon: Terminal }
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1.2 + index * 0.1, ease: "easeOut" }}
-              className="card text-center group"
-            >
-              <div className="w-12 h-12 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:border-gray-400 transition-colors duration-300">
-                <stat.icon size={24} className="text-black" />
-              </div>
-              <div className="text-2xl md:text-3xl font-bold text-black mb-2">
+            { number: '50+', label: 'Projects delivered' },
+            { number: '4+', label: 'Years building' },
+            { number: '2hr', label: 'Response time' },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <div className="text-2xl mb-1" style={{ color: '#ffffff', fontWeight: 500 }}>
                 {stat.number}
               </div>
-              <div className="text-gray-600 text-sm">
+              <div
+                className="text-xs"
+                style={{ color: 'var(--teal-200)', fontWeight: 400, lineHeight: 1.4 }}
+              >
                 {stat.label}
               </div>
-            </motion.div>
+            </div>
           ))}
         </motion.div>
       </div>
+    </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.2 }}
+      className="flex justify-center pb-6"
+    >
+      <motion.button
+        onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+        animate={{ y: [0, 6, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+        style={{ color: 'rgba(255,255,255,0.35)' }}
+        aria-label="Scroll down"
       >
-        <motion.button
-          onClick={scrollToNext}
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="text-gray-400 hover:text-black transition-colors duration-200"
-        >
-          <ChevronDown size={24} />
-        </motion.button>
-      </motion.div>
-    </section>
-  );
-};
+        <ChevronDown size={22} />
+      </motion.button>
+    </motion.div>
+
+  </section>
+);
 
 export default Hero;

@@ -1,146 +1,166 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Bot, Globe, Smartphone, Zap, Database, Shield, Code } from 'lucide-react';
+import { Bot, Globe, Smartphone, Zap, Database, Shield } from 'lucide-react';
 
-const Services = () => {
-  const services = [
-    {
-      icon: Bot,
-      title: 'AI Automation',
-      description: 'Streamline your business processes with intelligent automation solutions that learn and adapt.',
-      features: ['Process Automation', 'Machine Learning', 'Predictive Analytics'],
-      price: 'From R 40,000'
-    },
-    {
-      icon: Globe,
-      title: 'Web Development',
-      description: 'Modern, responsive websites that convert visitors into customers with stunning design.',
-      features: ['Responsive Design', 'SEO Optimized', 'Performance Focused'],
-      price: 'From R 15,000'
-    },
-    {
-      icon: Smartphone,
-      title: 'Mobile Apps',
-      description: 'Native and cross-platform mobile applications that engage users and drive growth.',
-      features: ['iOS & Android', 'Cross-Platform', 'User-Centric Design'],
-      price: 'From R 35,000'
-    },
-    {
-      icon: Zap,
-      title: 'Custom Software',
-      description: 'Tailored software solutions designed specifically for your business needs.',
-      features: ['Bespoke Solutions', 'Scalable Architecture', 'Integration Ready'],
-      price: 'From R 60,000+'
-    },
-    {
-      icon: Database,
-      title: 'Data Solutions',
-      description: 'Transform your data into actionable insights with advanced analytics and visualization.',
-      features: ['Data Analytics', 'Business Intelligence', 'Real-time Dashboards'],
-      price: 'From R 25,000'
-    },
-    {
-      icon: Shield,
-      title: 'Security & Compliance',
-      description: 'Enterprise-grade security measures to protect your business and ensure compliance.',
-      features: ['Data Protection', 'GDPR Compliance', 'Security Audits'],
-      price: 'From R 15,000'
-    }
-  ];
+const services = [
+  {
+    icon: Bot,
+    title: 'AI Automation',
+    description: 'Streamline operations with intelligent automation that learns and adapts to your business processes.',
+    features: ['Process Automation', 'Machine Learning', 'Predictive Analytics'],
+  },
+  {
+    icon: Globe,
+    title: 'Web Development',
+    description: 'Responsive, performant web platforms built to convert visitors and scale with your growth.',
+    features: ['Responsive Design', 'SEO Optimized', 'Performance Focused'],
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile Apps',
+    description: 'Native and cross-platform mobile applications that engage users and drive retention.',
+    features: ['iOS & Android', 'Cross-Platform', 'User-Centric Design'],
+  },
+  {
+    icon: Zap,
+    title: 'Custom Software',
+    description: 'Tailored software built precisely around your business requirements — no off-the-shelf compromise.',
+    features: ['Bespoke Solutions', 'Scalable Architecture', 'Integration Ready'],
+  },
+  {
+    icon: Database,
+    title: 'Data Solutions',
+    description: 'Turn raw data into decisions with advanced analytics, BI tools, and real-time dashboards.',
+    features: ['Data Analytics', 'Business Intelligence', 'Real-time Dashboards'],
+  },
+  {
+    icon: Shield,
+    title: 'Security & Compliance',
+    description: 'Enterprise-grade protection to keep your systems, data, and customers safe.',
+    features: ['Data Protection', 'GDPR Compliance', 'Security Audits'],
+  },
+];
 
-  return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Services
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Serving South African businesses with cutting-edge solutions that transform enterprises through intelligent automation and innovative technology.
-          </p>
-        </motion.div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-              className="card group"
-            >
-              <div className="w-12 h-12 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center mb-6 group-hover:border-gray-400 transition-colors duration-300">
-                <service.icon size={24} className="text-black" />
-              </div>
-              
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                {service.description}
-              </p>
-              
-              <div className="flex flex-wrap gap-2 mb-6">
-                {service.features.map((feature, featureIndex) => (
-                  <span
-                    key={featureIndex}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full border border-gray-200"
-                  >
-                    {feature}
-                  </span>
-                ))}
-              </div>
-              
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-black">
-                  {service.price}
-                </span>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
-                >
-                  Learn More →
-                </motion.button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          className="text-center mt-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="btn-primary flex items-center gap-2 mx-auto"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            <Code size={18} />
-            Get Started
-          </motion.button>
-        </motion.div>
-      </div>
-    </section>
-  );
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.07 } },
 };
+
+const item = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
+};
+
+const Services = () => (
+  <section id="services" className="py-24 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-16"
+      >
+        <p
+          className="text-xs font-medium uppercase mb-4"
+          style={{ color: 'var(--teal-600)', letterSpacing: '0.06em', fontWeight: 500 }}
+        >
+          What we do
+        </p>
+        <h2
+          className="max-w-lg"
+          style={{ fontSize: '2rem', fontWeight: 500, lineHeight: 1.2, color: 'var(--gray-900)' }}
+        >
+          Services built for businesses that want to grow.
+        </h2>
+      </motion.div>
+
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-5"
+      >
+        {services.map((service) => (
+          <motion.div
+            key={service.title}
+            variants={item}
+            className="p-8"
+            style={{
+              backgroundColor: 'var(--gray-50)',
+              border: '1px solid var(--gray-100)',
+              borderRadius: 'var(--radius-lg)',
+            }}
+          >
+            <div
+              className="w-10 h-10 flex items-center justify-center mb-6"
+              style={{
+                backgroundColor: 'var(--mint-100)',
+                borderRadius: 'var(--radius-md)',
+              }}
+            >
+              <service.icon size={18} style={{ color: 'var(--teal-600)' }} />
+            </div>
+
+            <h3
+              className="mb-2"
+              style={{ fontSize: '1.0625rem', fontWeight: 500, color: 'var(--gray-900)', lineHeight: 1.3 }}
+            >
+              {service.title}
+            </h3>
+
+            <p
+              className="mb-6"
+              style={{ fontSize: '0.9375rem', fontWeight: 400, color: 'var(--gray-500)', lineHeight: 1.7 }}
+            >
+              {service.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {service.features.map((f) => (
+                <span
+                  key={f}
+                  className="px-3 py-1 text-xs"
+                  style={{
+                    backgroundColor: 'var(--mint-100)',
+                    color: 'var(--teal-600)',
+                    borderRadius: 'var(--radius-full)',
+                    fontWeight: 500,
+                    letterSpacing: '0.01em',
+                  }}
+                >
+                  {f}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mt-12 text-center"
+      >
+        <button
+          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          className="inline-flex items-center gap-2 px-6 py-3 text-sm transition-all duration-200 active:scale-[0.97]"
+          style={{
+            backgroundColor: 'var(--teal-600)',
+            color: '#ffffff',
+            borderRadius: 'var(--radius-md)',
+            fontWeight: 500,
+          }}
+        >
+          Discuss your project
+        </button>
+      </motion.div>
+    </div>
+  </section>
+);
 
 export default Services;
