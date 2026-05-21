@@ -101,6 +101,13 @@ textarea:focus {
 .client-ticker {
   animation: ticker 30s linear infinite;
   will-change: transform;
+  width: max-content;
+}
+
+@media (max-width: 768px) {
+  .client-ticker {
+    animation-duration: 24s;
+  }
 }
 
 .client-ticker:hover {
