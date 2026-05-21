@@ -1,14 +1,17 @@
 'use client';
 
 const clients = [
-  { name: 'Acme Corp', url: 'https://example.com' },
-  { name: 'Bright Ideas', url: 'https://example.com' },
-  { name: 'Cape Ventures', url: 'https://example.com' },
-  { name: 'Delta Systems', url: 'https://example.com' },
-  { name: 'Echo Digital', url: 'https://example.com' },
-  { name: 'Fynbos Tech', url: 'https://example.com' },
-  { name: 'Growth Labs', url: 'https://example.com' },
-  { name: 'Harbour Co', url: 'https://example.com' },
+  { name: 'Clearpath Legal', url: 'https://clearpath-legal.vercel.app' },
+  { name: 'Harrow & Sons Joinery', url: 'https://harrow-and-sons-joinery.vercel.app' },
+  { name: 'Ironclad Gym', url: 'https://ironclad-gym.vercel.app' },
+  { name: 'Kestrel Co', url: 'https://kestrel-co.vercel.app' },
+  { name: 'Lumis Dental', url: 'https://lumis-dental.vercel.app' },
+  { name: 'Mossbrook Farm', url: 'https://mossbrook-farm.vercel.app' },
+  { name: 'Nimble Kids', url: 'https://nimble-kids.vercel.app' },
+  { name: 'Tidewater Brewing', url: 'https://tidewater-brewing.vercel.app' },
+  { name: 'Veldfire Studio', url: 'https://veldfire-studio.vercel.app' },
+  { name: 'Wavelink IT', url: 'https://wavelink-it.vercel.app' },
+  { name: 'Wolfram Studio', url: 'https://wolfram-studio.vercel.app' },
 ];
 
 const Dot = () => (
