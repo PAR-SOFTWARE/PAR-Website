@@ -21,7 +21,7 @@ const Dot = () => (
       width: 3,
       height: 3,
       borderRadius: '50%',
-      backgroundColor: 'rgba(172,254,165,0.35)',
+      backgroundColor: 'rgba(172,254,165,0.5)',
       flexShrink: 0,
     }}
   />
@@ -35,8 +35,8 @@ const ClientBanner = () => {
       style={{
         borderTop: '1px solid rgba(255,255,255,0.1)',
         overflow: 'hidden',
-        paddingTop: 14,
-        paddingBottom: 14,
+        paddingTop: 20,
+        paddingBottom: 20,
       }}
     >
       <div
@@ -50,16 +50,16 @@ const ClientBanner = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontSize: 11,
+                fontSize: 13,
                 fontWeight: 500,
-                letterSpacing: '0.08em',
+                letterSpacing: '0.07em',
                 textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.45)',
+                color: 'rgba(172,254,165,0.65)',
                 transition: 'color 0.2s',
                 flexShrink: 0,
               }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'rgba(172,254,165,0.9)')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
+              onMouseEnter={e => (e.currentTarget.style.color = '#ACFEA5')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(172,254,165,0.65)')}
             >
               {c.name}
             </a>
