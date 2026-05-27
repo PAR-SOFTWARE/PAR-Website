@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import HeroLogoMark from './HeroLogoMark';
-import ClientBanner from './ClientBanner';
+// import ClientBanner from './ClientBanner';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -156,7 +156,7 @@ const Hero = () => (
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.8 }}
       >
-        <ClientBanner />
+        {/* <ClientBanner /> */}
       </motion.div>
     </div>
 
