@@ -100,11 +100,11 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} PAR SOFTWARE. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs" style={{ color: 'var(--teal-200)', fontWeight: 400 }}>
+            <a href="/privacy" className="text-xs" style={{ color: 'var(--teal-200)', fontWeight: 400 }}>
               Privacy Policy
             </a>
-            <a href="#" className="text-xs" style={{ color: 'var(--teal-200)', fontWeight: 400 }}>
-              Terms of Service
+            <a href="/support/cps" className="text-xs" style={{ color: 'var(--teal-200)', fontWeight: 400 }}>
+              CPS Support
             </a>
           </div>
         </div>
