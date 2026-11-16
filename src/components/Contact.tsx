@@ -40,8 +40,8 @@ const Contact = () => {
   return (
     <section id="contact" className="wrap contact">
       <div className="contact-copy">
-        <h2 className="h-hero">
-          What&rsquo;s slowing you <span className="accent-text">down?</span>
+        <h2 className="h-hero accent-text">
+          What&rsquo;s slowing you down?
         </h2>
         <p>Tell us what&rsquo;s eating your team&rsquo;s week. We&rsquo;ll tell you, honestly, whether software fixes it.</p>
         <dl className="timings">

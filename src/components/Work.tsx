@@ -25,14 +25,14 @@ const Work = () => (
           Things we&rsquo;ve shipped.
         </h2>
         <p className="eyebrow" style={{ letterSpacing: '.1em' }}>
-          Selected work · 03
+          Selected work
         </p>
       </div>
 
       <div>
         <article className="work-row">
           <div className="w-text">
-            <p className="kicker">01 · Mobile app</p>
+            <p className="kicker">Mobile app</p>
             <h3>Cape Piscatorial Society</h3>
             <p>
               A members&rsquo; app for a Cape fly-fishing society. Book river beats, stillwaters and the
@@ -71,7 +71,7 @@ const Work = () => (
 
         <article className="work-row">
           <div className="w-text">
-            <p className="kicker">02 · Web platform</p>
+            <p className="kicker">Web platform</p>
             <h3>Spoor</h3>
             <p>
               Reconciliation and allocation for a vehicle value-added-products administrator. Spoor replaces
@@ -95,7 +95,7 @@ const Work = () => (
 
         <article className="work-row">
           <div className="w-text">
-            <p className="kicker">03 · Brand &amp; website</p>
+            <p className="kicker">Brand &amp; website</p>
             <h3>Will&rsquo;s Oven</h3>
             <p>
               A brand system and online home for a founder-led bakery making stone-ground Ezekiel bread,

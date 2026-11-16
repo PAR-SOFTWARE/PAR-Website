@@ -511,9 +511,12 @@ a:hover {
 }
 .studio-copy .eyebrow {
   margin-bottom: 20px;
+  font-weight: inherit;
 }
-.studio-copy h2 {
-  margin-bottom: 28px;
+.studio-lede {
+  font-size: clamp(20px, 1.7vw, 24px);
+  line-height: 1.45;
+  color: #fff;
 }
 .studio-copy > p:not(.eyebrow) {
   margin-bottom: 40px;

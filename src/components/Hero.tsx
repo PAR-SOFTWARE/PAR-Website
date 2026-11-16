@@ -32,13 +32,12 @@ const Hero = () => (
   <section id="top" className="wrap hero">
     <div className="hero-row">
       <div className="hero-copy">
-        <p className="eyebrow">Software studio · South Africa</p>
         <h1 className="h-hero">
-          We build the software <span className="accent-text">your business runs on.</span>
+          We build the software your business runs on.
         </h1>
         <p className="hero-lede">
-          Two engineers, one studio. Web platforms, mobile apps, custom systems and AI automation for
-          businesses across South Africa. The people who write your code are the people on every call.
+          Web platforms, mobile apps, custom systems and AI automation for South African businesses. You
+          deal directly with the two engineers who build it, from first call to launch.
         </p>
         <div className="hero-actions">
           <a href="#contact" className="btn">

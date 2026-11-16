@@ -9,11 +9,11 @@ const Studio = () => (
   <section id="studio" className="band">
     <div className="wrap section-pad studio-row">
       <div className="studio-copy">
-        <p className="eyebrow accent">The studio</p>
-        <h2 className="h-section">Two founders. Zero account managers.</h2>
-        <p>
-          Par Software is a small South African studio on purpose. You brief the engineers, the engineers
-          build it, and nothing gets lost in between.
+        <h2 className="eyebrow accent">The studio</h2>
+        <p className="studio-lede">
+          Par Software is Ruben and Erik. We&rsquo;ve built software together for six years and delivered 20
+          projects for 10 clients. We stay small on purpose: when you call, you get the engineer who wrote
+          your code, and your brief never passes through a middleman.
         </p>
         <ul className="principles">
           <li>The person you brief writes the code.</li>
