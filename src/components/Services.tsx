@@ -1,164 +1,87 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { Bot, Globe, Smartphone, Zap, Database, Shield } from 'lucide-react';
-
 const services = [
   {
-    icon: Bot,
-    title: 'AI Automation',
-    description: 'Streamline operations with intelligent automation that learns and adapts to your business processes.',
-    features: ['Process Automation', 'Machine Learning', 'Predictive Analytics'],
+    name: 'AI automation',
+    does: "Takes the repetitive work off your team's desk: workflows that read, sort, match and route the way your people do.",
+    includes: 'Process automation · ML · Predictive analytics',
   },
   {
-    icon: Globe,
-    title: 'Web Development',
-    description: 'Responsive, performant web platforms built to convert visitors and scale with your growth.',
-    features: ['Responsive Design', 'SEO Optimized', 'Performance Focused'],
+    name: 'Web platforms',
+    does: 'Fast, search-friendly sites and web apps built to convert visitors and carry real load.',
+    includes: 'Responsive · SEO · Performance',
   },
   {
-    icon: Smartphone,
-    title: 'Mobile Apps',
-    description: 'Native and cross-platform mobile applications that engage users and drive retention.',
-    features: ['iOS & Android', 'Cross-Platform', 'User-Centric Design'],
+    name: 'Mobile apps',
+    does: 'iOS and Android apps people keep on their home screen, for bookings, payments and field data.',
+    includes: 'iOS & Android · Cross-platform',
   },
   {
-    icon: Zap,
-    title: 'Custom Software',
-    description: 'Tailored software built precisely around your business requirements - no off-the-shelf compromise.',
-    features: ['Bespoke Solutions', 'Scalable Architecture', 'Integration Ready'],
+    name: 'Custom software',
+    does: "The system off-the-shelf tools can't give you, built around how your business actually runs.",
+    includes: 'Bespoke · Scalable · Integrations',
   },
   {
-    icon: Database,
-    title: 'Data Solutions',
-    description: 'Turn raw data into decisions with advanced analytics, BI tools, and real-time dashboards.',
-    features: ['Data Analytics', 'Business Intelligence', 'Real-time Dashboards'],
+    name: 'Data & dashboards',
+    does: 'Get your numbers out of spreadsheets and into live dashboards your managers will actually open.',
+    includes: 'Analytics · BI · Real-time',
   },
   {
-    icon: Shield,
-    title: 'Security & Compliance',
-    description: 'Enterprise-grade protection to keep your systems, data, and customers safe.',
-    features: ['Data Protection', 'GDPR Compliance', 'Security Audits'],
+    name: 'Security & compliance',
+    does: 'POPIA-minded data handling, access control and audits baked in from the first commit.',
+    includes: 'Data protection · Audits',
   },
 ];
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.07 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
-};
-
 const Services = () => (
-  <section id="services" className="py-24 bg-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="mb-16"
-      >
-        <p
-          className="text-xs font-medium uppercase mb-4"
-          style={{ color: 'var(--teal-600)', letterSpacing: '0.06em', fontWeight: 500 }}
-        >
-          What we do
-        </p>
-        <h2
-          className="max-w-lg"
-          style={{ fontSize: '2rem', fontWeight: 500, lineHeight: 1.2, color: 'var(--gray-900)' }}
-        >
-          Services built for businesses that want to grow.
-        </h2>
-      </motion.div>
+  <section id="services" className="services">
+    <div className="wrap section-pad">
+      <div className="section-head">
+        <div>
+          <p className="eyebrow">Services</p>
+          <h2 className="h-section">Six things we do. All of them in-house.</h2>
+        </div>
+        <p>No subcontractors, no offshore handoff. Every line below is built by the two people who quoted it.</p>
+      </div>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-5"
-      >
-        {services.map((service) => (
-          <motion.div
-            key={service.title}
-            variants={item}
-            className="p-8"
-            style={{
-              backgroundColor: 'var(--gray-50)',
-              border: '1px solid var(--gray-100)',
-              borderRadius: 'var(--radius-lg)',
-            }}
-          >
-            <div
-              className="w-10 h-10 flex items-center justify-center mb-6"
-              style={{
-                backgroundColor: 'var(--mint-100)',
-                borderRadius: 'var(--radius-md)',
-              }}
-            >
-              <service.icon size={18} style={{ color: 'var(--teal-600)' }} />
-            </div>
+      <div role="table" aria-label="Services" className="scorecard">
+        <div role="row" className="sc-row sc-head">
+          <span role="columnheader">No.</span>
+          <span role="columnheader">Service</span>
+          <span role="columnheader" className="sc-hide">
+            What it does
+          </span>
+          <span role="columnheader" className="sc-hide">
+            Includes
+          </span>
+        </div>
 
-            <h3
-              className="mb-2"
-              style={{ fontSize: '1.0625rem', fontWeight: 500, color: 'var(--gray-900)', lineHeight: 1.3 }}
-            >
-              {service.title}
-            </h3>
-
-            <p
-              className="mb-6"
-              style={{ fontSize: '0.9375rem', fontWeight: 400, color: 'var(--gray-500)', lineHeight: 1.7 }}
-            >
-              {service.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {service.features.map((f) => (
-                <span
-                  key={f}
-                  className="px-3 py-1 text-xs"
-                  style={{
-                    backgroundColor: 'var(--mint-100)',
-                    color: 'var(--teal-600)',
-                    borderRadius: 'var(--radius-full)',
-                    fontWeight: 500,
-                    letterSpacing: '0.01em',
-                  }}
-                >
-                  {f}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+        {services.map((s, i) => (
+          <div role="row" className="sc-row" key={s.name}>
+            <span role="cell" className="sc-no">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span role="cell" className="sc-name">
+              {s.name}
+            </span>
+            <span role="cell" className="sc-hide">
+              {s.does}
+            </span>
+            <span role="cell" className="sc-hide sc-incl">
+              {s.includes}
+            </span>
+          </div>
         ))}
-      </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="mt-12 text-center"
-      >
-        <button
-          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          className="inline-flex items-center gap-2 px-6 py-3 text-sm transition-all duration-200 active:scale-[0.97]"
-          style={{
-            backgroundColor: 'var(--teal-600)',
-            color: '#ffffff',
-            borderRadius: 'var(--radius-md)',
-            fontWeight: 500,
-          }}
-        >
-          Discuss your project
-        </button>
-      </motion.div>
+        <div role="row" className="sc-row sc-total">
+          <span role="cell">Total</span>
+          <span role="cell">One studio</span>
+          <span role="cell" className="sc-hide">
+            One contract, one team, one number to call
+          </span>
+          <span role="cell" className="sc-hide">
+            <a href="#contact">Book a call →</a>
+          </span>
+        </div>
+      </div>
     </div>
   </section>
 );

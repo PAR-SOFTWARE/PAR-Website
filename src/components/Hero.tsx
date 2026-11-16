@@ -1,165 +1,108 @@
-'use client';
+const inputs = [
+  { y: 74, label: 'your brief' },
+  { y: 194, label: 'spreadsheets' },
+  { y: 334, label: 'legacy system' },
+  { y: 454, label: 'manual process' },
+];
 
-import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
-import HeroLogoMark from './HeroLogoMark';
-// import ClientBanner from './ClientBanner';
+const outputs = [
+  { y: 134, label: 'web platform', delay: '' },
+  { y: 264, label: 'mobile app', delay: 'd2' },
+  { y: 394, label: 'AI automation', delay: 'd3' },
+];
 
-const ease = [0.16, 1, 0.3, 1] as const;
+const paths = [
+  { d: 'M124 90 H210 Q230 90 230 110 V260 Q230 280 250 280 H260', delay: '' },
+  { d: 'M124 210 H170 Q190 210 190 230 V260 Q190 280 210 280 H260', delay: 'd1' },
+  { d: 'M124 350 H170 Q190 350 190 330 V300 Q190 280 210 280 H260', delay: 'd2' },
+  { d: 'M124 470 H210 Q230 470 230 450 V300 Q230 280 250 280 H260', delay: 'd3' },
+  { d: 'M340 280 H370 Q390 280 390 260 V170 Q390 150 410 150 H436', delay: 'd1' },
+  { d: 'M340 280 H436', delay: 'd2' },
+  { d: 'M340 280 H370 Q390 280 390 300 V390 Q390 410 410 410 H436', delay: 'd3' },
+];
+
+const stats = [
+  { value: '20', label: 'Projects delivered' },
+  { value: '10', label: 'Clients' },
+  { value: '6 yrs', label: 'Building together' },
+  { value: '<2h', label: 'Founder reply time', accent: true },
+];
 
 const Hero = () => (
-  <section
-    id="home"
-    className="min-h-[100dvh] flex flex-col justify-between pt-16"
-    style={{ backgroundColor: 'var(--teal-600)' }}
-  >
-    <div className="flex-1 flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-
-          {/* Left - content */}
-          <div>
-            <motion.p
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease }}
-              className="text-xs font-medium uppercase mb-8"
-              style={{ color: 'var(--mint-300)', letterSpacing: '0.06em', fontWeight: 500 }}
-            >
-              South African Software Studio
-            </motion.p>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1, ease }}
-              className="mb-8"
-              style={{
-                fontSize: 'clamp(2.5rem, 4.5vw, 3.5rem)',
-                fontWeight: 500,
-                lineHeight: 1.1,
-                color: '#ffffff',
-              }}
-            >
-              We build software<br />
-              that moves{' '}
-              <span style={{ color: 'var(--mint-300)' }}>businesses<br />forward.</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2, ease }}
-              className="text-base mb-12 max-w-md"
-              style={{ color: 'var(--teal-200)', lineHeight: 1.7, fontWeight: 400 }}
-            >
-              PAR SOFTWARE specializes in AI automation, web development, and custom
-              software solutions for South African companies ready to grow.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3, ease }}
-              className="flex flex-col sm:flex-row gap-3"
-            >
-              <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm transition-all duration-200 active:scale-[0.97]"
-                style={{
-                  backgroundColor: 'var(--mint-300)',
-                  color: 'var(--teal-800)',
-                  borderRadius: 'var(--radius-md)',
-                  fontWeight: 500,
-                }}
-              >
-                Start a project
-                <ArrowRight size={15} />
-              </button>
-
-              <button
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm transition-all duration-200 active:scale-[0.97]"
-                style={{
-                  color: 'rgba(255,255,255,0.85)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  borderRadius: 'var(--radius-md)',
-                  fontWeight: 500,
-                }}
-              >
-                Our services
-              </button>
-            </motion.div>
-          </div>
-
-          {/* Right - logo mark with animated rings */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.25, ease }}
-            className="hidden lg:flex items-center justify-center"
-          >
-            <HeroLogoMark />
-          </motion.div>
-
+  <section id="top" className="wrap hero">
+    <div className="hero-row">
+      <div className="hero-copy">
+        <p className="eyebrow">Software studio · South Africa</p>
+        <h1 className="h-hero">
+          We build the software <span className="accent-text">your business runs on.</span>
+        </h1>
+        <p className="hero-lede">
+          Two engineers, one studio. Web platforms, mobile apps, custom systems and AI automation for
+          businesses across South Africa. The people who write your code are the people on every call.
+        </p>
+        <div className="hero-actions">
+          <a href="#contact" className="btn">
+            Start a project
+          </a>
+          <a href="#work" className="btn ghost">
+            See our work
+          </a>
         </div>
+      </div>
 
-        {/* Stats strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20 pt-8 grid grid-cols-3 gap-8 max-w-sm"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}
+      <div className="hero-art">
+        <svg
+          role="img"
+          aria-label="Animation: a brief, spreadsheets, a legacy system and manual processes flow into Par Software and come out as a web platform, a mobile app and an AI automation"
+          viewBox="0 0 560 560"
         >
-          {[
-            { number: '50+', label: 'Projects delivered' },
-            { number: '4+', label: 'Years building' },
-            { number: '2hr', label: 'Response time' },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <div className="text-2xl mb-1" style={{ color: '#ffffff', fontWeight: 500 }}>
-                {stat.number}
-              </div>
-              <div
-                className="text-xs"
-                style={{ color: 'var(--teal-200)', fontWeight: 400, lineHeight: 1.4 }}
-              >
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+          <g fill="none" stroke="rgba(190,252,174,.16)" strokeWidth="1.5">
+            {paths.map((p) => (
+              <path key={p.d} d={p.d} />
+            ))}
+          </g>
+          <g fill="none" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round">
+            {paths.map((p) => (
+              <path key={p.d} className={`flow ${p.delay}`} pathLength={100} d={p.d} />
+            ))}
+          </g>
+          <g>
+            {inputs.map((n) => (
+              <g key={n.label}>
+                <rect x="0" y={n.y} width="124" height="32" rx="6" fill="#0f2224" stroke="rgba(190,252,174,.2)" />
+                <text x="14" y={n.y + 20} fill="#a6c4c6">
+                  {n.label}
+                </text>
+              </g>
+            ))}
+            {outputs.map((n) => (
+              <g key={n.label}>
+                <rect x="436" y={n.y} width="124" height="32" rx="6" fill="#0f2224" stroke="rgba(190,252,174,.4)" />
+                <circle className={`dot ${n.delay}`} cx="452" cy={n.y + 16} r="4" fill="var(--accent)" />
+                <text x="464" y={n.y + 20} fill="#ffffff">
+                  {n.label}
+                </text>
+              </g>
+            ))}
+          </g>
+          <circle className="pulse" cx="300" cy="280" r="40" fill="none" stroke="var(--accent)" strokeWidth="1.5" />
+          <circle cx="300" cy="280" r="40" fill="#0b1718" stroke="rgba(190,252,174,.4)" strokeWidth="1.5" />
+          <circle cx="300" cy="280" r="26" fill="var(--accent)" />
+          <text x="300" y="285" textAnchor="middle" style={{ fontSize: 13, fontWeight: 500 }} fill="#275559">
+            PAR
+          </text>
+        </svg>
       </div>
     </div>
 
-    <div className="flex flex-col">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="flex justify-center pb-6"
-      >
-        <motion.button
-          onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ color: 'rgba(255,255,255,0.35)' }}
-          aria-label="Scroll down"
-        >
-          <ChevronDown size={22} />
-        </motion.button>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-      >
-        {/* <ClientBanner /> */}
-      </motion.div>
-    </div>
-
+    <dl className="stats">
+      {stats.map((s) => (
+        <div key={s.label}>
+          <dd className={s.accent ? 'accent-text' : undefined}>{s.value}</dd>
+          <dt>{s.label}</dt>
+        </div>
+      ))}
+    </dl>
   </section>
 );
 

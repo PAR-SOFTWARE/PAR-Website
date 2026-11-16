@@ -1,8 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import { Manrope, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
 
 const BASE_URL = 'https://parsoftware.co.za';
+
+const body = Manrope({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -89,6 +93,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: "#0b1718",
 };
 
 // LocalBusiness JSON-LD structured data
@@ -140,7 +145,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-ZA">
+    <html lang="en-ZA" className={`${body.variable} ${mono.variable}`}>
       <head>
         <script
           type="application/ld+json"

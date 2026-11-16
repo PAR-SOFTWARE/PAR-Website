@@ -22,7 +22,7 @@ const config: Config = {
         xs: '2px',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -2,11 +2,13 @@ import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-  const { firstName, lastName, email, message } = await request.json();
+  const { name, company, email, needs, message } = await request.json();
 
-  if (!firstName || !email || !message) {
+  if (!name || !email || !message) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
+
+  const needsList = Array.isArray(needs) ? needs.filter((n) => typeof n === 'string').join(', ') : '';
 
   const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -14,8 +16,15 @@ export async function POST(request: Request) {
     from: 'PAR Software Contact <contact@parsoftware.co.za>',
     to: ['ruben@parsoftware.co.za', 'erik@parsoftware.co.za'],
     replyTo: email,
-    subject: `New contact from ${firstName} ${lastName}`,
-    text: `Name: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`,
+    subject: `New enquiry from ${name}${company ? ` (${company})` : ''}`,
+    text: [
+      `Name: ${name}`,
+      `Company: ${company || '-'}`,
+      `Email: ${email}`,
+      `Needs: ${needsList || '-'}`,
+      '',
+      message,
+    ].join('\n'),
   });
 
   if (error) {

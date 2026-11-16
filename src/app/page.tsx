@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import Work from '@/components/Work';
 import Services from '@/components/Services';
-// import Testimonials from '@/components/Testimonials';
-import About from '@/components/About';
+import Studio from '@/components/Studio';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -18,14 +18,16 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <>
       <Navigation />
-      <Hero />
-      <Services />
-      {/* <Testimonials /> */}
-      <About />
-      <Contact />
+      <main>
+        <Hero />
+        <Work />
+        <Services />
+        <Studio />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
