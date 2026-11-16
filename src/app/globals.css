@@ -330,6 +330,219 @@ a:hover {
 .work-row:last-child {
   border-bottom: 1px solid var(--line-strong);
 }
+/* Golf trail: a ball that rolls past the projects as you scroll */
+.golf-wrap {
+  position: relative;
+  --ball: 26px;
+  --hole-x: 72%;
+}
+.golf-wrap article {
+  position: relative;
+  z-index: 1;
+}
+.golf-wrap .work-row:last-of-type {
+  border-bottom: 1px solid var(--line-strong);
+}
+.golf-trail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 0;
+}
+.golf-ball {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: var(--ball);
+  height: var(--ball);
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+}
+.golf-wrap.is-ready .golf-ball {
+  opacity: 1;
+}
+.golf-ball-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle at 40% 35%, #ffffff 0%, #eef2ef 55%, #c3cdc9 100%);
+  box-shadow:
+    0 8px 14px rgba(0, 0, 0, 0.45),
+    0 2px 3px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.25s ease-in,
+    opacity 0.25s ease-in;
+}
+.golf-wrap.is-done .golf-ball-body {
+  transform: translateY(4px) scale(0.3);
+  opacity: 0;
+}
+.golf-ball-dimples {
+  position: absolute;
+  inset: -6px;
+  background:
+    radial-gradient(circle, rgba(40, 60, 56, 0.24) 0 1.1px, rgba(40, 60, 56, 0) 1.7px) 0 0 / 5px 5px,
+    radial-gradient(circle, rgba(40, 60, 56, 0.18) 0 1.1px, rgba(40, 60, 56, 0) 1.7px) 2.5px 2.5px / 5px 5px;
+}
+.golf-ball-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.95) 0 12%, rgba(255, 255, 255, 0) 40%),
+    radial-gradient(circle at 68% 74%, rgba(50, 70, 66, 0.3), rgba(50, 70, 66, 0) 62%);
+  box-shadow:
+    inset -3px -4px 6px rgba(0, 0, 0, 0.14),
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6);
+}
+.golf-green {
+  position: relative;
+  height: 240px;
+}
+.golf-green-art {
+  position: absolute;
+  inset: 0;
+}
+.golf-green-art > * {
+  position: absolute;
+}
+.golf-glow {
+  left: calc(var(--hole-x) - 140px);
+  top: 40px;
+  width: 280px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(190, 252, 174, 0.1), rgba(190, 252, 174, 0));
+}
+.golf-pin {
+  left: calc(var(--hole-x) - 1px);
+  top: 22px;
+  width: 2px;
+  height: 96px;
+  background: #d8e6e6;
+  border-radius: 1px;
+}
+.golf-flag {
+  left: calc(var(--hole-x) + 1px);
+  top: 22px;
+  overflow: visible;
+  transform-origin: left center;
+}
+.golf-wrap.is-done .golf-flag {
+  animation: pflag 1.4s ease-in-out 3;
+}
+.golf-hole,
+.golf-ring {
+  left: calc(var(--hole-x) - 20px);
+  top: 112px;
+  width: 40px;
+  height: 14px;
+  border-radius: 50%;
+}
+.golf-hole {
+  background: #050c0d;
+  box-shadow:
+    inset 0 3px 4px rgba(0, 0, 0, 0.8),
+    0 1px 0 rgba(190, 252, 174, 0.25);
+}
+.golf-ring {
+  border: 2px solid var(--accent);
+  animation: pring 1s ease-out forwards;
+}
+.golf-confetti {
+  left: var(--hole-x);
+  top: 118px;
+  width: 0;
+  height: 0;
+}
+.golf-confetti span {
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  height: 6px;
+  border-radius: 1px;
+  opacity: 0;
+  animation: pconf 1.3s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+.golf-sunk {
+  position: absolute;
+  left: 0;
+  top: 64px;
+  max-width: 36%;
+  visibility: hidden;
+  opacity: 0;
+}
+.golf-wrap.is-done .golf-sunk {
+  visibility: visible;
+  animation: psunk 0.6s 0.25s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+.golf-sunk-kicker {
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.golf-sunk-title {
+  margin-bottom: 14px;
+  font-family: var(--display);
+  font-weight: var(--dw);
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.golf-sunk a {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+}
+@keyframes pconf {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) rotate(var(--r));
+  }
+}
+@keyframes pring {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+@keyframes psunk {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pflag {
+  0%,
+  100% {
+    transform: scaleX(1) skewY(0);
+  }
+  50% {
+    transform: scaleX(0.8) skewY(6deg);
+  }
+}
 .w-text {
   display: flex;
   flex-direction: column;
@@ -976,6 +1189,18 @@ a:hover {
     stroke-dasharray: none;
     stroke-opacity: 0.5;
   }
+  .golf-wrap.is-done .golf-flag,
+  .golf-wrap.is-done .golf-sunk {
+    animation: none;
+    opacity: 1;
+  }
+  .golf-ring,
+  .golf-confetti {
+    display: none;
+  }
+  .golf-ball-body {
+    transition: none;
+  }
 }
 
 /* ── Small screens ──────────────────────────────────── */
@@ -991,6 +1216,28 @@ a:hover {
   .work-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
+  }
+  .golf-wrap {
+    --hole-x: 50%;
+  }
+  .golf-green {
+    height: auto;
+  }
+  .golf-green-art {
+    position: relative;
+    inset: auto;
+    height: 168px;
+  }
+  .golf-sunk {
+    position: static;
+    max-width: none;
+    text-align: center;
+  }
+  .golf-ball-dimples {
+    background-size: 4px 4px;
+    background-position:
+      0 0,
+      2px 2px;
   }
   .nav-links {
     display: none;

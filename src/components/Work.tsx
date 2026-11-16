@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import GolfTrail from './GolfTrail';
 
 const BrowserBar = ({ title }: { title: string }) => (
   <div className="browser-bar">
@@ -29,7 +30,7 @@ const Work = () => (
         </p>
       </div>
 
-      <div>
+      <GolfTrail>
         <article className="work-row">
           <div className="w-text">
             <p className="kicker">Mobile app</p>
@@ -116,7 +117,7 @@ const Work = () => (
             />
           </div>
         </article>
-      </div>
+      </GolfTrail>
     </div>
   </section>
 );
