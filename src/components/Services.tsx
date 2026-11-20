@@ -1,3 +1,17 @@
+import Scorecard from './Scorecard';
+
+// Hand-drawn shapes, so no two marks look stamped from the same mould.
+const circles = [
+  'M31 5C17 2 4 8 4 17c1 9 15 13 28 11 11-2 15-11 10-18-4-5-13-7-24-4',
+  'M28 4C14 4 3 10 5 18c2 8 17 11 29 9 10-2 14-10 9-16-4-5-12-7-22-5',
+  'M33 6C19 1 5 7 4 16c0 10 14 13 27 12 12-1 16-10 11-17-3-5-11-7-21-5',
+];
+const PencilCircle = ({ i }: { i: number }) => (
+  <svg className="sc-mark" aria-hidden="true" viewBox="0 0 48 32" style={{ rotate: `${(i % 3) * 4 - 4}deg` }}>
+    <path d={circles[i % 3]} pathLength={1} />
+  </svg>
+);
+
 const services = [
   {
     name: 'AI automation',
@@ -42,7 +56,7 @@ const Services = () => (
         <p>No subcontractors, no offshore handoff. Every line below is built by the two people who quoted it.</p>
       </div>
 
-      <div role="table" aria-label="Services" className="scorecard">
+      <Scorecard>
         <div role="row" className="sc-row sc-head">
           <span role="columnheader">No.</span>
           <span role="columnheader">Service</span>
@@ -57,7 +71,10 @@ const Services = () => (
         {services.map((s, i) => (
           <div role="row" className="sc-row" key={s.name}>
             <span role="cell" className="sc-no">
-              {String(i + 1).padStart(2, '0')}
+              <span className="sc-num">
+                {String(i + 1).padStart(2, '0')}
+                <PencilCircle i={i} />
+              </span>
             </span>
             <span role="cell" className="sc-name">
               {s.name}
@@ -73,7 +90,14 @@ const Services = () => (
 
         <div role="row" className="sc-row sc-total">
           <span role="cell">Total</span>
-          <span role="cell">One studio</span>
+          <span role="cell">
+            <span className="sc-num">
+              One studio
+              <svg className="sc-mark sc-underline" aria-hidden="true" viewBox="0 0 120 12" preserveAspectRatio="none">
+                <path d="M2 5c30-3 70-3 116-1M8 10c28-2 62-2 104 0" pathLength={1} />
+              </svg>
+            </span>
+          </span>
           <span role="cell" className="sc-hide">
             One contract, one team, one number to call
           </span>
@@ -81,7 +105,7 @@ const Services = () => (
             <a href="#contact">Book a call →</a>
           </span>
         </div>
-      </div>
+      </Scorecard>
     </div>
   </section>
 );

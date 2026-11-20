@@ -225,6 +225,7 @@ a:hover {
 
 .hero {
   padding-top: clamp(72px, 10vw, 140px);
+  padding-bottom: clamp(56px, 7vw, 96px);
 }
 .hero-row {
   display: flex;
@@ -270,37 +271,6 @@ a:hover {
 .hero-art text {
   font-family: var(--mono);
   font-size: 12px;
-}
-
-.stats {
-  margin-top: clamp(72px, 9vw, 120px);
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid var(--line-strong);
-}
-.stats > div {
-  padding: 28px 24px 40px;
-  border-left: 1px solid var(--line);
-}
-.stats > div:first-child {
-  padding-left: 0;
-  border-left: 0;
-}
-.stats dd {
-  font-family: var(--display);
-  font-size: 56px;
-  font-weight: var(--dw);
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: #fff;
-}
-.stats dt {
-  margin-top: 12px;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
 }
 
 /* ── Work ───────────────────────────────────────────── */
@@ -709,6 +679,47 @@ a:hover {
   font-family: var(--mono);
   font-size: 13px;
   color: var(--ink-muted);
+}
+
+/* Pencil marks: each service gets circled as it scrolls in */
+.sc-num {
+  position: relative;
+  display: inline-block;
+}
+.sc-mark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46px;
+  height: 31px;
+  translate: -50% -52%;
+  overflow: visible;
+  pointer-events: none;
+}
+.sc-mark path {
+  fill: none;
+  stroke: var(--accent-ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0.85;
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.45, 0.05, 0.3, 1) var(--score-delay, 0ms);
+}
+.sc-row.is-scored .sc-mark path {
+  stroke-dashoffset: 0;
+}
+.sc-mark.sc-underline {
+  top: auto;
+  bottom: -9px;
+  width: 106%;
+  height: 10px;
+  translate: -50% 0;
+}
+.sc-total .sc-mark path {
+  transition-duration: 0.9s;
+  transition-delay: calc(var(--score-delay, 0ms) + 0.2s);
 }
 
 /* ── Studio ─────────────────────────────────────────── */
@@ -1201,6 +1212,10 @@ a:hover {
   .golf-ball-body {
     transition: none;
   }
+  .sc-mark path {
+    transition: none;
+    stroke-dashoffset: 0;
+  }
 }
 
 /* ── Small screens ──────────────────────────────────── */
@@ -1216,6 +1231,10 @@ a:hover {
   .work-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
+  }
+  .sc-mark {
+    width: 40px;
+    height: 27px;
   }
   .golf-wrap {
     --hole-x: 50%;
@@ -1241,21 +1260,5 @@ a:hover {
   }
   .nav-links {
     display: none;
-  }
-  .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .stats > div {
-    padding: 20px 16px 24px;
-  }
-  .stats > div:nth-child(odd) {
-    padding-left: 0;
-    border-left: 0;
-  }
-  .stats > div:nth-child(n + 3) {
-    border-top: 1px solid var(--line);
-  }
-  .stats dd {
-    font-size: 40px;
   }
 }

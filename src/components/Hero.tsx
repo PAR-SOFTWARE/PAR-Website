@@ -21,13 +21,6 @@ const paths = [
   { d: 'M340 280 H370 Q390 280 390 300 V390 Q390 410 410 410 H436', delay: 'd3' },
 ];
 
-const stats = [
-  { value: '20', label: 'Projects delivered' },
-  { value: '10', label: 'Clients' },
-  { value: '6 yrs', label: 'Building together' },
-  { value: '<2h', label: 'Founder reply time', accent: true },
-];
-
 const Hero = () => (
   <section id="top" className="wrap hero">
     <div className="hero-row">
@@ -93,15 +86,6 @@ const Hero = () => (
         </svg>
       </div>
     </div>
-
-    <dl className="stats">
-      {stats.map((s) => (
-        <div key={s.label}>
-          <dd className={s.accent ? 'accent-text' : undefined}>{s.value}</dd>
-          <dt>{s.label}</dt>
-        </div>
-      ))}
-    </dl>
   </section>
 );
 
