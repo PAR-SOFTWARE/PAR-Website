@@ -722,6 +722,123 @@ a:hover {
   transition-delay: calc(var(--score-delay, 0ms) + 0.2s);
 }
 
+/* ── 404: out of bounds ─────────────────────────────── */
+
+.ob {
+  padding-top: clamp(48px, 8vw, 96px);
+  padding-bottom: clamp(80px, 10vw, 128px);
+}
+.ob-scene {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  aspect-ratio: 800 / 260;
+}
+.ob-scene svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.ob-front {
+  z-index: 2;
+}
+.ob-ground {
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+}
+.ob-flight-ghost {
+  fill: none;
+  stroke: rgba(190, 252, 174, 0.22);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 9;
+  stroke-linecap: round;
+}
+.ob-flight {
+  fill: none;
+  stroke: var(--accent);
+  stroke-opacity: 0.55;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: obflight 1.3s cubic-bezier(0.3, 0.1, 0.45, 1) 0.3s forwards;
+}
+.ob-tee {
+  fill: var(--muted);
+}
+.ob-stakes rect {
+  fill: #d8e6e6;
+}
+.ob-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--muted);
+}
+.ob-grass path {
+  fill: none;
+  stroke: rgba(190, 252, 174, 0.45);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+.ob-ball {
+  position: absolute;
+  z-index: 1;
+  left: 77.6%;
+  top: 84.2%;
+  width: clamp(14px, 3vw, 26px);
+  height: clamp(14px, 3vw, 26px);
+  translate: -50% -50%;
+  opacity: 0;
+  animation: obland 0.7s ease-out 1.5s forwards;
+}
+.ob-copy {
+  max-width: 640px;
+  margin: clamp(40px, 6vw, 72px) auto 0;
+  text-align: center;
+}
+.ob-copy .eyebrow {
+  margin-bottom: 20px;
+}
+.ob-copy .h-section {
+  margin: 0 auto 24px;
+  max-width: 14ch;
+}
+.ob-copy > p:not(.eyebrow) {
+  max-width: 40ch;
+  margin: 0 auto;
+  font-size: clamp(17px, 1.4vw, 19px);
+  color: var(--text-hi);
+}
+.ob-copy .hero-actions {
+  justify-content: center;
+  margin-top: 36px;
+}
+@keyframes obflight {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes obland {
+  0% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  65% {
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ── Studio ─────────────────────────────────────────── */
 
 .studio-row {
@@ -1216,6 +1333,12 @@ a:hover {
     transition: none;
     stroke-dashoffset: 0;
   }
+  .ob-flight,
+  .ob-ball {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
 }
 
 /* ── Small screens ──────────────────────────────────── */
@@ -1231,6 +1354,20 @@ a:hover {
   .work-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
+  }
+  .ob {
+    overflow: hidden;
+  }
+  .ob-scene {
+    width: 150%;
+    margin-left: -40%;
+  }
+  .ob-label {
+    display: none;
+  }
+  .ob-ball {
+    width: 18px;
+    height: 18px;
   }
   .sc-mark {
     width: 40px;
